@@ -14,6 +14,7 @@ import { ProfilePage } from "./features/profile/ProfilePage.jsx";
 import { LoginPage } from "./features/auth/LoginPage.jsx";
 import { RegisterPage } from "./features/auth/RegisterPage.jsx";
 import { NotFoundPage } from "./ui/NotFoundPage.jsx";
+import { RewiewsSection } from "./features/locations/components/ReviewsSection.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,38 +25,43 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="locations" element={<LocationsPage />} />
-        <Route path="locations/:id" element={<LocationDetailsPage />} />
-        <Route
-          path="locations/add"
-          element={
-            isLoggedIn ? <LocationFormPage /> : <Navigate to="/auth/login" />
-          }
-        />
-        <Route
-          path="locations/:id/edit"
-          element={
-            isLoggedIn ? <LocationFormPage /> : <Navigate to="/auth/login" />
-          }
-        />
-        <Route
-          path="profile/:userId"
-          element={isLoggedIn ? <ProfilePage /> : <Navigate to="/auth/login" />}
-        />
-        <Route
-          path="auth/login"
-          element={!isLoggedIn ? <LoginPage /> : <Navigate to="/" />}
-        />
-        <Route
-          path="auth/register"
-          element={!isLoggedIn ? <RegisterPage /> : <Navigate to="/" />}
-        />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="locations" element={<LocationsPage />} />
+          <Route path="locations/:id" element={<LocationDetailsPage />} />
+          <Route
+            path="locations/add"
+            element={
+              isLoggedIn ? <LocationFormPage /> : <Navigate to="/auth/login" />
+            }
+          />
+          <Route
+            path="locations/:id/edit"
+            element={
+              isLoggedIn ? <LocationFormPage /> : <Navigate to="/auth/login" />
+            }
+          />
+          <Route
+            path="profile/:userId"
+            element={
+              isLoggedIn ? <ProfilePage /> : <Navigate to="/auth/login" />
+            }
+          />
+          <Route
+            path="auth/login"
+            element={!isLoggedIn ? <LoginPage /> : <Navigate to="/" />}
+          />
+          <Route
+            path="auth/register"
+            element={!isLoggedIn ? <RegisterPage /> : <Navigate to="/" />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+      <RewiewsSection />
+    </>
   );
 };
 
