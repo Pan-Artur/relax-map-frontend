@@ -1,0 +1,51 @@
+.hero {
+    background-image: url('https://image2url.com/r2/default/images/1769280502355-41660871-593c-4c8f-a255-694c4b9cfa5d.png');
+    width: 100%;
+    position: relative;
+    min-height: 100px;
+    max-height: 724px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/* .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+} */
+
+.hero_content {
+    position: relative;
+    max-width: 700px;
+    padding: 24px;
+    color: #fff;
+}
+
+.hero_header {
+    font-weight: 700;
+}
+
+.search_box {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.search_box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #FFE5D9;
+}
+
+.search_box button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #CC6534;
+    color: #fff;
+    cursor: pointer;
+}
