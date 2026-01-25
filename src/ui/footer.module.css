@@ -1,33 +1,24 @@
 .footer{
     width: 100%;
-    /* height: 283px; */
     background: #FFE5D9;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footerContainer{
-    /* width: 91%; */
-    /* height: 123px; */
-
-    
-}
 .topFooterContainer{
     width: 100%;
-    /* height: 50%; */
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #00000026;
 }
 .logoContainer{
+    
     display: flex;
     align-items: center;
-    width: 121px;
-    height: 29px;
+    width: 129px;
+    height: 40px;
 }
 .socialContainer{
-    /* width: 132px; */
-    /* height: 24px; */
     display: flex;
     justify-content: space-between;
 }
@@ -37,7 +28,6 @@
 }
 .bottomFooterContainer{
     width: 100%;
-    /* height: 50%; */
     display: flex;
     justify-content: center;
     align-items: end;
@@ -46,7 +36,6 @@
 .FooterCopyright{
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    /* font-size: 16px; */
     color: #4C2613;
 }
 
@@ -146,5 +135,9 @@
         width: 275px;
         height: 43px;
         margin-top: 0;
+    }
+    .socialIcon{
+        width: 24px;
+        height: 24px;
     }
 }
