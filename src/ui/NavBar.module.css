@@ -9,6 +9,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0;
 }
 .item{
     list-style: none;
@@ -21,6 +22,14 @@
     text-decoration: none;
     color: black;
 }
-@media (min-width: 768px) {
-    
+@media (min-width: 375px) {
+    .navBar{
+        width: 262px;
+    }
+    .list{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        row-gap: 24px;
+    }
 }

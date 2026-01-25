@@ -20,6 +20,8 @@
     border-bottom: 1px solid #00000026;
 }
 .logoContainer{
+    display: flex;
+    align-items: center;
     width: 121px;
     height: 29px;
 }
@@ -48,8 +50,42 @@
     color: #4C2613;
 }
 
-@media (min-width: 320px) {
-    
+@media (min-width: 375px) {
+    .footer{
+        height: 476px;
+    }
+    .footerContainer{
+        width: 70%;
+        height: 340px;
+    }
+    .topFooterContainer{
+        height: 272px;
+        flex-direction: column      ;
+        justify-content: center;
+        align-items: center;
+        row-gap: 40px;
+    }
+    .bottomFooterContainer{
+        display: flex;
+        height: 68px;
+    }
+    .FooterCopyright{
+        font-size: 12px;
+        text-align: center;
+    }
+    .socialContainer{
+        width: 192px;
+        height: 32px;
+    }
+    .footerNavBar{
+        width: 100%;
+        margin-top: 0;
+        height: 96px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 @media (min-width: 768px) {
     .footer{
@@ -61,8 +97,7 @@
     }
     .topFooterContainer{
         height: 128px;
-        
-
+        flex-wrap: wrap;
     }
     .bottomFooterContainer{
         display: flex;
@@ -77,8 +112,11 @@
         height: 24px;
     }
     .footerNavBar{
-        width: 248px;
+        width: 100%;
+        margin-top: 29px;
         height: 40px;
+        display: flex;
+        justify-content: center;
     }
 }
 @media (min-width: 1440px) {
@@ -107,5 +145,6 @@
     .footerNavBar{
         width: 275px;
         height: 43px;
+        margin-top: 0;
     }
 }
