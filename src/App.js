@@ -24,8 +24,9 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="locations" element={<LocationsPage />} />
         <Route path="locations/:id" element={<LocationDetailsPage />} />
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
+    </>
   );
 };
 
