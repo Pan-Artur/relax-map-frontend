@@ -1,13 +1,11 @@
 import { HeroBlock } from "./HeroBlock";
 import { AdvantagesBlock } from "./AdvantagesBlock";
-
-function HomePage() {
+  
+export const HomePage = () => {
   return (
     <>
       <HeroBlock />
       <AdvantagesBlock />
     </>
   );
-}
-
-export default HomePage;
+};
