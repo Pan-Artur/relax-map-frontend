@@ -30,12 +30,14 @@
         width: 32px;
         height: 32px;
     }
-    .mobileList{
+    /* .mobileList{
         display: flex;
         flex-direction: column;
         row-gap: 10px;
         list-style: none;
-    }
+        background: white;
+        
+    } */
     .mobileNavLink{
         text-decoration: none;
         color: black;
@@ -64,8 +66,12 @@
     }
     .mobileList{
         position: absolute;
+        display: flex;
+        flex-direction: column;
         top: 100%;
         right: -40px;
+        row-gap: 10px;
+        list-style: none;
     }
     .burgerMobileBtns{
         display: flex;

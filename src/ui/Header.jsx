@@ -42,8 +42,7 @@ export const Header = ({isAuth,userAvatar,nameUser}) => {
           </div>
         <div className={style.mobileNavContainer}>
           <button className={style.burgerMenu} onClick={openBurger}>
-            <img className={style.burgerMenuIcon} src="https://i.ibb.co/wFS0Gg6t/Vector-1.png" alt="menu"
-            />
+            <BuregerMenu className={style.burgerMenuIcon}/>
           </button>
 
           <ul className={`${isOpen ? style.mobileList : style.burgerMenuDisable}`}>
