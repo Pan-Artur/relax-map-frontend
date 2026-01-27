@@ -1,8 +1,7 @@
 .navBar{
     display: flex;
-    width: 290px;
+    width: 426px;
     height: 27px;
-    column-gap: 10px;
     align-items: center;
 }
 .list{
@@ -20,7 +19,4 @@
 .navLink{
     text-decoration: none;
     color: black;
-}
-@media (min-width: 768px) {
-    
 }

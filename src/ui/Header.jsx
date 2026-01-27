@@ -4,11 +4,15 @@ import { Logo } from "./Logo.jsx";
 import { NavBar } from "./NavBar";
 import { Link } from "react-router-dom";
 import { Button } from "./Button.jsx";
-export const Header = () => {
+export const Header = ({isAuth,userAvatar,nameUser}) => {
   const [isOpen, setOpen] = useState(false);
+  const [isOpenMenu,setOpenMenu] = useState(false)
   const openBurger = () => {
     setOpen(!isOpen);
   };
+  const openUserMenu = () => {
+    setOpenMenu(!isOpenMenu)
+  }
   return (
     <header className={style.header}>
       <div className={style.headerContainer}>
@@ -16,10 +20,21 @@ export const Header = () => {
           <Logo />
         </div>
         <div className={style.NavBarAndbuttons}>
-          <NavBar />
-          <div className={style.desctopBtns }>
+          <NavBar isLogin={'#'} />
+          <div className={style.desctopBtns } style={{display:isAuth ? "none" : "flex" }}>
             <Button/>
           </div>
+            <div className={style.userInfo} style={{display: isAuth ? "flex" : "none"}}>
+                <button className={style.shareLactionBtn}>Поділитись локацією</button>
+                <div className={style.UserAvatarAndName} onClick={openUserMenu}>
+                    <img className={style.userAvatar} src={userAvatar} alt="UserAvatar" />
+                    <p>{nameUser}</p>
+                </div>
+                <ul className={style.userList} style={{display:isOpenMenu ? "block" : "none"}}>
+                  <li className={style.userItem}><Link className={style.changeAvatar}>Зміна аватару</Link></li>
+                </ul>
+                <button className={style.logOutBtn}></button>
+            </div>
         </div>
         <div className={style.mobileNavBarAndButtons}>
           <div className={style.mobileBtns}>
@@ -38,11 +53,16 @@ export const Header = () => {
             <li className={style.mobileItem}>
               <Link to={""} className={style.mobileNavLink}>Місця відпочинку</Link> 
             </li>
+            <li className={style.mobileItem}>
+              <Link to={""} className={style.mobileNavLink}>Мій Профіль</Link>
+            </li>
             <div className={style.burgerMobileBtns}>
-            <Button/>
-          </div>
+              <Button/>
+            </div>
           </ul>
         </div>
+
+          
         </div>
       </div>
     </header>

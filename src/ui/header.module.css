@@ -108,7 +108,7 @@
         top: 122%;
         right: -65px;
         width: 114px;
-        background: #ffffff;
+        background: #FFF2EC;
         border-radius: 6px;
     }
     .NavBarAndbuttons{
@@ -137,10 +137,11 @@
     }
     .NavBarAndbuttons{
         display: flex;
-        width: 525px;
+        width: 830px;
         height: 38px;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
+        column-gap: 32px;
     }
     .burgerMenu{
         display: none;
@@ -164,5 +165,55 @@
     .desctopBtns{
         display: flex;
         column-gap: 16px;
+    }
+    .userInfo{
+        width: 375px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }   
+    .shareLactionBtn{
+        width: 245px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        border-right: 1px solid #00000026;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .userAvatar{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        
+    }
+    .logOutBtn{
+        width: 24px;
+        height: 24px;
+        background:none ;
+    }
+    .userList{
+        position: absolute; 
+        top: 14%;
+        right: 74px; 
+        width: 120px;
+    }
+    .userItem{
+        list-style: none;
+    }
+    .changeAvatar{
+        text-decoration: none;
+        color: black;
     }
 }
