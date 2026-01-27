@@ -4,6 +4,7 @@ import { Logo } from "./Logo.jsx";
 import { NavBar } from "./NavBar";
 import { Link } from "react-router-dom";
 import { Button } from "./Button.jsx";
+import { ReactComponent as BuregerMenu } from "../assets/icons/burger.svg";
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const openBurger = () => {
@@ -27,8 +28,7 @@ export const Header = () => {
           </div>
         <div className={style.mobileNavContainer}>
           <button className={style.burgerMenu} onClick={openBurger}>
-            <img className={style.burgerMenuIcon} src="https://i.ibb.co/wFS0Gg6t/Vector-1.png" alt="menu"
-            />
+            <BuregerMenu className={style.burgerMenuIcon}/>
           </button>
 
           <ul className={`${isOpen ? style.mobileList : style.burgerMenuDisable}`}>
