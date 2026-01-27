@@ -3,12 +3,44 @@ import style from "./AuthForm.module.css";
 
 // id = login or register. register default value
 export function AuthForm({ id = "register" }) {
+	let errors = {
+		username: "",
+		email: "",
+		password: "",
+	};
+
+	const clearErrors = () => {
+		errors = {
+			username: "",
+			email: "",
+			password: "",
+		};
+	};
+	
+	const setStyleError = (element, error) => { 
+		errors[element] = error
+		
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		if (id === "register") {
+			const elements = e.target.elements;
+			const username = elements.username.value;
+			const email = elements.email.value;
+			const password = elements.password.value;
+			console.log(username, email, password);
+		} else {
+			// TODO: implement login logic
+		}
+	};
+
 	return (
 		<div className={style.box}>
 			<h3 className={style.title}>
 				{id === "register" ? "Реєстрація" : "Вхід"}
 			</h3>
-			<form className={style.form}>
+			<form onSubmit={handleSubmit} className={style.form}>
 				<ul className={style.list}>
 					{id === "register" && (
 						<li className={style.item}>
