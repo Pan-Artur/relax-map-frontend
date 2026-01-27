@@ -89,9 +89,7 @@
 	transition: all 250ms ease-in-out;
 }
 
-.button:hover,
-.button:focus,
-.button:active {
+.button:hover {
 	border: 1px solid #cc6534;
 	background: #ffe5d9;
 	color: #000;

@@ -16,20 +16,80 @@ export function AuthForm({ id = "register" }) {
 			password: "",
 		};
 	};
-	
-	const setStyleError = (element, error) => { 
-		errors[element] = error
-		
-	}
+
+	const setError = (element, error) => {
+		errors[element.name] = error;
+	};
+
+	const setErrorStyles = (elements) => {
+		Object.keys(errors).forEach((key) => {
+			if (errors[key]) {
+				elements[key].classList.add(style.errorInput);
+				elements[key].value = "";
+
+				const errorElement = document.getElementById(`${key}Error`);
+				errorElement.textContent = errors[key];
+				errorElement.classList.add(style.unHidden);
+			} else {
+				elements[key].classList.remove(style.errorInput);
+
+				const errorElement = document.getElementById(`${key}Error`);
+				errorElement.textContent = "error";
+				errorElement.classList.remove(style.unHidden);
+			}
+		});
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (id === "register") {
+			// checking elements
 			const elements = e.target.elements;
-			const username = elements.username.value;
-			const email = elements.email.value;
-			const password = elements.password.value;
-			console.log(username, email, password);
+			const username = elements.username;
+			const email = elements.email;
+			const password = elements.password;
+			
+			clearErrors()
+
+			// username validation
+			if (username.value.length < 4) {
+				setError(username, "Імʼя повинно містити не менше 4 символів");
+			}
+
+			if (username.value.length > 20) {
+				setError(username, "Імʼя повинно містити не більше 20 символів");
+			}
+
+			// email validation
+			if (!email.value) {
+				setError(email, "Поле не може бути порожнім");
+			}
+
+			if (!email.value.includes("@")) {
+				setError(email, "Некоректна електронна адреса");
+			}
+
+			// password validation
+			if (!password.value) {
+				setError(password, "Поле не може бути порожнім");
+			}
+
+			if (password.value.length < 8) {
+				setError(password, "Пароль повинен містити не менше 8 символів");
+			}
+
+			if (
+				!password.value.match(
+					/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+				)
+			) {
+				setError(
+					password,
+					"Пароль повинен містити хоча б одну велику і малу літеру, одну цифру і один спеціальний символ",
+				);
+			}
+			
+			setErrorStyles(elements);
 		} else {
 			// TODO: implement login logic
 		}
@@ -53,7 +113,9 @@ export function AuthForm({ id = "register" }) {
 								name="username"
 								placeholder="Ваше імʼя"
 							/>
-							<p className={`${style.errorText}`}>error</p>
+							<p id="usernameError" className={`${style.errorText}`}>
+								error
+							</p>
 						</li>
 					)}
 					<li className={style.item}>
@@ -61,12 +123,14 @@ export function AuthForm({ id = "register" }) {
 							Пошта*
 						</label>
 						<input
-							type="email"
+							type="text"
 							className={style.input}
 							name="email"
 							placeholder="hello@relaxmap.ua"
 						/>
-						<p className={style.errorText}>test error</p>
+						<p id="emailError" className={style.errorText}>
+							test error
+						</p>
 					</li>
 					<li className={style.item}>
 						<label htmlFor="password" className={style.label}>
@@ -78,7 +142,9 @@ export function AuthForm({ id = "register" }) {
 							name="password"
 							placeholder="********"
 						/>
-						<p className={style.errorText}>error</p>
+						<p id="passwordError" className={style.errorText}>
+							error
+						</p>
 					</li>
 				</ul>
 				<button type="submit" className={style.button}>
