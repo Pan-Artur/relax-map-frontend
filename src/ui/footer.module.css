@@ -75,6 +75,11 @@
         align-items: center;
         justify-content: center;
     }
+
+    .socialIcon{
+        width: 32px;
+        height: 32px;
+    }
 }
 @media (min-width: 768px) {
     .footer{
@@ -87,6 +92,8 @@
     .topFooterContainer{
         height: 128px;
         flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .bottomFooterContainer{
         display: flex;
@@ -102,10 +109,14 @@
     }
     .footerNavBar{
         width: 100%;
-        margin-top: 29px;
         height: 40px;
         display: flex;
         justify-content: center;
+        flex-direction: row;
+    }
+    .socialIcon{
+        width: 24px;
+        height: 24px;
     }
 }
 @media (min-width: 1440px) {
