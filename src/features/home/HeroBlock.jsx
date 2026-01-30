@@ -30,26 +30,20 @@ export function HeroBlock() {
                     "url('https://image2url.com/r2/default/images/1769280502355-41660871-593c-4c8f-a255-694c4b9cfa5d.png')",
             }}
         >
-            <div className={styles.overlay} />
-            <div className={styles.hero_content}>
-                <h1 className={styles.hero_header}>
+            <div className={styles.heroContent}>
+                <h1>
                     Відкрий для себе Україну. Знайди ідеальне місце для відпочинку
                 </h1>
                 <p>
-                    Тисячі перевірених локацій з реальними фото та відгуками від
-                    мандрівників
+                    Тисячі перевірених локацій з реальними фото та відгуками від мандрівників
                 </p>
 
-
-                <div className={styles.search_box}>
+                <div className={styles.searchBox}>
                     <input
                         type="text"
                         placeholder="Введіть назву, тип або регіон..."
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        onKeyDown={handleKeyDown}
                     />
-                    <button onClick={handleSearch}>Знайти місце</button>
+                    <button>Знайти місце</button>
                 </div>
             </div>
         </section>
