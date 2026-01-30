@@ -3,19 +3,38 @@
     background: #FFF2EC;
 }
 
-.advantages_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    margin-top: 32px;
+.advantagesTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
 }
 
-.adv_card {
+.advantagesGrid {
+    display: flex;
+    justify-content: center;
+}
+
+.advCard {
     background: #FFE5D9;
-    padding: 24px;
+    padding: 16px;
+    margin: 10px;
     border-radius: 16px;
+    width: 421px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.icon {
-    font-size: 28px;
+.advCard h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
 }
+
+.advCard p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+/* .icon {
+    font-size: 28px;
+} */
