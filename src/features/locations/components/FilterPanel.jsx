@@ -3,114 +3,213 @@ export const FilterPanel = () => {
     <section>
       <form action="">
         <input type="text" placeholder="Пошук" />
-        <button>Регіон</button>
+        <button>Область</button>
         <ul>
           <li>
-            <input type="radio" name="Київська область" id="kievska" />
+            <label>
+              <input type="radio" name="region" id="all" />
+              Вся Україна
+            </label>
           </li>
           <li>
-            <input type="radio" name="Житомирська область" id="zitomirska" />
+            <label>
+              <input type="radio" name="region" id="kievska" />
+              Київська область
+            </label>
           </li>
           <li>
-            <input
-              type="radio"
-              name="Кіровоградська область"
-              id="kirovogradska"
-            />
+            <label>
+              <input type="radio" name="region" id="zitomirska" />
+              Житомирська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Полтавська область" id="poltavska" />
+            <label>
+              <input type="radio" name="region" id="kirovogradska" />
+              Кіровоградська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Черкаська область" id="cherkaska" />
+            <label>
+              <input type="radio" name="region" id="poltavska" />
+              Полтавська область
+            </label>
           </li>
           <li>
-            
-            <input type="radio" name="Волиньська область" id="volinska" />
+            <label>
+              <input type="radio" name="region" id="cherkaska" />
+              Черкаська область
+            </label>
           </li>
           <li>
-            
-            <input
-              type="radio"
-              name="Дніпропетровська область"
-              id="dnipropetrovska"
-            />
+            <label>
+              <input type="radio" name="region" id="volinska" />
+              Волинська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Донецька область" id="donetska" />
+            <label>
+              <input type="radio" name="region" id="dnipropetrovska" />
+              Дніпропетровська область
+            </label>
           </li>
           <li>
-           
-            <input type="radio" name="Закарпатьска область" id="luganska" />
+            <label>
+              <input type="radio" name="region" id="donetska" />
+              Донецька область
+            </label>
           </li>
           <li>
-           
-            <input type="radio" name="Запорізька область" id="zaporizka" />
+            <label>
+              <input type="radio" name="region" id="zakarpatska" />
+              Закарпатська область
+            </label>
           </li>
           <li>
-            <input
-              type="radio"
-              name="Івано-Франківська область"
-              id="ivanoFrankivska"
-            />
+            <label>
+              <input type="radio" name="region" id="zaporizka" />
+              Запорізька область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Луганьска область" id="luganska" />
+            <label>
+              <input type="radio" name="region" id="ivanoFrankivska" />
+              Івано-Франківська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Львівська область" id="lvivska" />
+            <label>
+              <input type="radio" name="region" id="luganska" />
+              Луганська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Миколаївська область" id="mikolaivska" />
+            <label>
+              <input type="radio" name="region" id="lvivska" />
+              Львівська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Одеська область" id="odeska" />
+            <label>
+              <input type="radio" name="region" id="mikolaivska" />
+              Миколаївська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Рівеньска область" id="rivenska" />
+            <label>
+              <input type="radio" name="region" id="odeska" />
+              Одеська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Тернопільска область" id="ternopilska" />
+            <label>
+              <input type="radio" name="region" id="rivenska" />
+              Рівненська область
+            </label>
           </li>
           <li>
-           
-            <input type="radio" name="Харківська область" id="kharkivska" />
+            <label>
+              <input type="radio" name="region" id="ternopilska" />
+              Тернопільська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Хмельницька область" id="hmelnicka" />
+            <label>
+              <input type="radio" name="region" id="kharkivska" />
+              Харківська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Чернівецька область" id="chernivecka" />
+            <label>
+              <input type="radio" name="region" id="hmelnicka" />
+              Хмельницька область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Чернігівська область" id="chernigivska" />
+            <label>
+              <input type="radio" name="region" id="chernivecka" />
+              Чернівецька область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Херсонська область" id="hersonska" />
+            <label>
+              <input type="radio" name="region" id="chernigivska" />
+              Чернігівська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Сумська область" id="sumska" />
+            <label>
+              <input type="radio" name="region" id="hersonska" />
+              Херсонська область
+            </label>
           </li>
           <li>
-            
-            <input type="radio" name="АР Крим" id="krim" />
+            <label>
+              <input type="radio" name="region" id="sumska" />
+              Сумська область
+            </label>
           </li>
           <li>
-            <input type="radio" name="Вінницька область" id="vinnicka" />
+            <label>
+              <input type="radio" name="region" id="krim" />
+              АР Крим
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="region" id="vinnicka" />
+              Вінницька область
+            </label>
           </li>
         </ul>
+
         <button type="button">Тип локації</button>
         <ul>
-            <li><input type="checkbox" name="Пляж" id="beach" /></li>
-            <li><input type="checkbox" name="Кемпінг" id="camping" /></li>
-            <li><input type="checkbox" name="Парк" id="park" /></li>
-            <li><input type="checkbox" name="Іст. пам'ятка" id="monument" /></li>
+          <li>
+            <label>
+              <input type="checkbox" name="Пляж" id="beach" />
+              Пляж
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="place" id="camping" />
+              Кемпінг
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="place" id="park" />
+              Парк
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="place" id="monument" />
+              Іст. пам'ятка
+            </label>
+          </li>
         </ul>
         <button type="button">Сортування</button>
         <ul>
-            <li><input type="checkbox" name="За популярністю" id="popular" /></li>
-            <li><input type="checkbox" name="За рейтингом" id="highRated" /></li>
-            <li><input type="checkbox" name="Новіші спочатку" id="new" /></li>
+          <li>
+            <label>
+              <input type="radio" name="filter" id="popular" />
+              За популярністю
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="filter" id="highRated" />
+              За рейтингом
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="filter" id="new" />
+              Новіші спочатку
+            </label>
+          </li>
         </ul>
       </form>
     </section>
