@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./HeroBlock.module.css";
+import styles from "./HeroBlock.module.scss";
 
 export function HeroBlock() {
     const [query, setQuery] = useState("");
