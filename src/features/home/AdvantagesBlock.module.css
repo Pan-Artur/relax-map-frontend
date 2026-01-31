@@ -1,0 +1,40 @@
+.advantages {
+    padding: 80px 24px;
+    background: #FFF2EC;
+}
+
+.advantagesTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.advantagesGrid {
+    display: flex;
+    justify-content: center;
+}
+
+.advCard {
+    background: #FFE5D9;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 16px;
+    width: 421px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.advCard h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.advCard p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+/* .icon {
+    font-size: 28px;
+} */

@@ -1,0 +1,299 @@
+.header{
+    width: 100%;
+    height: 72px;
+    background: #FFF2EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logoContainer{
+    width: 121px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerContainer{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.NavBarAndbuttons{
+    display: flex;
+    align-items: center;
+}
+@media (min-width: 375px) {
+    .headerContainer{
+        width: 70%;
+    }
+    .mobileNavBarAndButtons{
+        width: 32px;
+        height: 32px;
+    }
+    .mobileList{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        list-style: none;
+        
+    }
+    .mobileNavLink{
+        text-decoration: none;
+        color: black;
+    }
+    .burgerMenuDisable{
+        display: none;
+    } 
+    .burgerMenu{
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #00000015;
+        border-radius: 6px;
+    }
+    .NavBarAndbuttons{
+        display: none;
+    }
+    .mobileBtns{
+        display: none !important;
+    }
+    .desctopBtns{
+        display: none;
+    }
+    .mobileNavContainer{
+        position: relative;
+    }
+    .mobileList{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        right: -40px;
+        row-gap: 10px;
+        list-style: none;
+        background: #FFF2EC;
+        padding: 20px;
+        z-index: 10000;
+    }
+    .burgerMobileBtns{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .shareLoctionBtn{
+        display: none !important; 
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .userAvatar{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        
+    }
+    .logOutBtn{
+        width: 30px;
+        height: 30px;
+        background:none ;
+        border: none;
+        cursor: pointer;
+    }
+    .shareLoctionMobileBtn{
+        width: 125px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 10px;
+    }
+
+}
+@media  (min-width: 768px) {
+    .headerContainer{
+        width: 82%;
+    }
+    .burgerMenu{
+        width: 32px;
+        height: 32px;
+        border: 1px solid #00000015;
+        border-radius: 6px;
+    }
+    .burgerMenuIcon{
+        display: flex;
+    }
+    .burgerMenuDisable{
+        display: none;
+    }
+    .mobileItem{
+        list-style: none;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .mobileNavLink{
+        text-decoration: none;
+        color: black;
+    }
+    .mobileNavContainer{
+        position: relative;
+    }
+    .mobileList{
+        position: absolute;
+        top: 122%;
+        right: -65px;
+        width: 114px;
+        background: #FFF2EC;
+        border-radius: 6px;
+        padding: 10px,20px;
+        z-index: 10000;
+    }
+    .NavBarAndbuttons{
+        display: none;
+    }
+    .mobileNavBarAndButtons{
+        width: 234px;
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobileBtns{
+        display: flex;
+        width: 186px;
+        height: 32px;
+        justify-content: space-between;
+    }
+    .burgerMobileBtns{
+        display: none;
+    }
+    .shareLoctionBtn{
+        display: flex !important; 
+        width: 196px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .userAvatar{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .logOutBtn{
+        width: 30px;
+        height: 30px;
+        background:none ;
+        border: none;
+        cursor: pointer;
+    }
+    .shareLoctionMobileBtn{
+        display:none !important; 
+    }
+}
+@media screen and (min-width: 1440px){
+    .headerContainer{
+        width: 91%;
+    }
+    .NavBarAndbuttons{
+        display: flex;
+        width: 830px;
+        height: 38px;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 32px;
+    }
+    .burgerMenu{
+        display: none;
+    }
+    .mobileItem{
+        list-style: none;
+    }
+    .mobileNavLink{
+        text-decoration: none;
+    }
+    .mobileNavContainer{
+        display: none;
+    }
+    .mobileNavBarAndButtons{
+        display: none;
+    }
+    .btns{
+        display: flex;
+        column-gap: 16px;
+    }
+    .desctopBtns{
+        display: flex;
+        column-gap: 16px;
+    }
+    .userInfo{
+        width: 375px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }   
+    .shareLoctionBtn{
+        width: 245px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        border-right: 1px solid #00000026;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .userAvatar{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        
+    }
+    .logOutBtn{
+        width: 24px;
+        height: 24px;
+        background:none ;
+        border: none;
+        cursor: pointer;
+    }
+}
