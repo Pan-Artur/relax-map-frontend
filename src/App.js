@@ -15,7 +15,6 @@ import { LoginPage } from "./features/auth/LoginPage.jsx";
 import { RegisterPage } from "./features/auth/RegisterPage.jsx";
 import { NotFoundPage } from "./ui/NotFoundPage.jsx";
 
-
 const App = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -26,9 +25,8 @@ const App = () => {
 
   return (
     <>
-      <LocationsPage/>
       <Routes>
-      <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="locations" element={<LocationsPage />} />
         <Route path="locations/:id" element={<LocationDetailsPage />} />
@@ -59,9 +57,7 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-
     </>
-    
   );
 };
 
