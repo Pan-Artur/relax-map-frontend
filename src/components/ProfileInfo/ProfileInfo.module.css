@@ -1,0 +1,49 @@
+.section {
+	margin-top: 48px;
+}
+
+.container {
+	width: 1344px;
+	margin: 0;
+	padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	display: flex;
+	gap: 24px;
+
+	align-items: center;
+}
+
+.image {
+	width: 145px;
+	height: 145px;
+
+	border-radius: 50%;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+}
+
+.name {
+	color: #1b391b;
+	font-family: Montserrat;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 130%;
+	letter-spacing: -0.32px;
+}
+
+.atriclesCount {
+	color: #1b391b;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
