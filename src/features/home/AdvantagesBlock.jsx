@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AdvantagesBlock.module.css";
+import styles from "./AdvantagesBlock.module.scss";
 
 export function AdvantagesBlock() {
     const advantages = [
