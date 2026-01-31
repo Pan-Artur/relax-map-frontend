@@ -20,7 +20,7 @@
     text-decoration: none;
     color: black;
 }
-@media (min-width: 375px) {
+@media (min-width: 375px) and (max-width: 768px) {
     .navBar{
         width: 262px;
     }
@@ -32,7 +32,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width:1024px) {
     .list{
         flex-direction: row;
     }
