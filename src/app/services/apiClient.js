@@ -30,6 +30,9 @@ export const api = {
   register: (data) => apiInstance.post("/auth/register", data),
   me: () => apiInstance.get("/auth/me"),
 
+  getUserById: (id) => apiInstance.get(`/users/${id}`),
+  getUserLocations: (id) => apiInstance.get(`/users/${id}/locations`),
+
   getLocations: (params) => apiInstance.get("/locations", {params}),
   getLocationById: (id) => apiInstance.get(`/locations/${id}`),
   createLocation: (data) => apiInstance.post("/locations", data),
