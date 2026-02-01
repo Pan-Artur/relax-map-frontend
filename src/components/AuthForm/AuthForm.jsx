@@ -1,10 +1,16 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { login } from '../../app/store/authSlice.js';
 import style from './AuthForm.module.css'
 
 import { api } from '../../app/services/apiClient'
 
 // id = login or register. register default value
 export function AuthForm({ id = 'register' }) {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	let errors = {
 		username: '',
 		email: '',
@@ -98,13 +104,23 @@ export function AuthForm({ id = 'register' }) {
 			setErrorStyles(elements)
 
 			try {
-				api.register(JSON.stringify(authData))
+				const res = await api.register(authData);
+
+        localStorage.setItem("token", res.data.token);
+
+        navigate(`/profile/${res.data.user.id}`);
 			} catch (error) {
 				console.log(`error while registration ${error}`)
 			}
 		} else {
 			try {
-				await api.login(JSON.stringify(authData))
+				const res = await api.login(authData);
+
+				dispatch(login(res.data));
+
+        localStorage.setItem("token", res.data.token);
+
+        navigate(`/profile/${res.data.user.id}`);
 			} catch (error) {
 				console.log(`error while logging in: ${error}`)
 			}

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { loadFromLocalStorage } from "./app/store/authSlice.js";
-import { selectIsLoggedIn } from "./app/store/authSelectors.js";
+import { selectIsLoggedIn, selectUser } from "./app/store/authSelectors.js";
 
 import { MainLayout } from "./app/MainLayout.jsx";
 import { HomePage } from "./features/home/HomePage.jsx";
@@ -17,8 +17,8 @@ import { NotFoundPage } from "./ui/NotFoundPage.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isLoggedIn = true
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     dispatch(loadFromLocalStorage());
@@ -44,10 +44,12 @@ const App = () => {
           }
         />
         <Route
-          path="profile/:userId"
-          element={isLoggedIn ? <ProfilePage /> : <Navigate to="/auth/login" />}
+          path={`profile/${user?.id}`}
+          element={isLoggedIn && user?.id ? <ProfilePage /> : <Navigate to="/auth/login" />}
         />
-        <Route
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+      <Route
           path="auth/login"
           element={!isLoggedIn ? <LoginPage /> : <Navigate to="/" />}
         />
@@ -55,8 +57,6 @@ const App = () => {
           path="auth/register"
           element={!isLoggedIn ? <RegisterPage /> : <Navigate to="/" />}
         />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
     </Routes>
     </>
   );
