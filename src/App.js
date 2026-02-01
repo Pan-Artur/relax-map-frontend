@@ -17,7 +17,8 @@ import { NotFoundPage } from "./ui/NotFoundPage.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = true
 
   useEffect(() => {
     dispatch(loadFromLocalStorage());
