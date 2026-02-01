@@ -2,6 +2,9 @@
 // import { fetchPopularLocations } from "./api";
 // import LocationsCard from "../../features/locations/components/LocationCard";
 // import "./PopularLocationsBlock.module.scss";
+import { useEffect, useState } from "react";
+import { fetchPopularLocations } from "./api";
+import { LocationCard } from "./LocationCard.jsx";
 
 // export default function PopularLocationsBlock() {
 //   const [locations, setLocations] = useState([]);
