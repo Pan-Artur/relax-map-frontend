@@ -1,0 +1,39 @@
+.popular {
+  padding: 60px 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+
+    button {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #000;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+  }
+}

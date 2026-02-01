@@ -1,0 +1,86 @@
+.reviews {
+  padding: 60px 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 8px;
+    padding-top: 30px;
+
+    button {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid #00000026;
+      background: #FFE5D9;
+      cursor: pointer;
+      transition: 0.2s;
+
+      // &:hover {
+      //   background: #000;
+      // }
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+  }
+}
+
+.review-card {
+  width: 340px;
+  flex-shrink: 0;
+  background: #fde7db;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+
+  &__rating {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #4C2613;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__author {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #4C2613;
+  }
+
+  &__type {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    opacity: 0.6;
+  }
+}
