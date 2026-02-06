@@ -3,12 +3,33 @@
 
   &Form {
     display: flex;
-    gap: 24px;
+    justify-content: space-between;
   }
+  &Box{
+    display: flex;
+    gap: 24px;
 
-  &Regions {
-    &Button {
-      border: 1px solid #ffa57a;
+  }
+  &Input {
+    border: 0;
+    outline: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 8px;
+    width: 310px;
+    height: 43px;
+
+    background: #ffe5d9;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #4c4c4c;
+  }
+  &Button {
+    border: 0;
+
+      outline: 1px solid rgba(0, 0, 0, 0.15);
       border-radius: 6px;
       padding: 8px;
       width: 199px;
@@ -24,7 +45,14 @@
 
       display: flex;
       justify-content: space-between;
+
+      &Icon {
+        width: 24px;
+        height: 24px;
+      }
     }
+  &Regions {
+    
   }
 }
 .isHidden {
