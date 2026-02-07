@@ -18,21 +18,20 @@
 
 .heroContent {
     position: relative;
-    max-width: 720px;
-    padding: 32px;
-    margin-left: 80px;
+    width: 100%;
+    padding: 24px 16px;
     color: #fff;
 
 
     h1 {
-        font-size: 42px;
-        line-height: 1.2;
-        margin-bottom: 16px;
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 12px;
     }
 
 
     p {
-        font-size: 16px;
+        font-size: 14px;
         opacity: 0.9;
     }
 }
@@ -40,33 +39,83 @@
 
 .searchBox {
     display: flex;
-    margin-top: 28px;
-    max-width: 560px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
 
 
     input {
-        flex: 1;
+        width: 100%;
         padding: 14px 16px;
-        border-radius: 10px 0 0 10px;
+        border-radius: 10px;
+        background: #FFE5D9;
+        border: 1px solid #00000026;
+        font-size: 14px;
+    }
+
+
+    button {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 10px;
         border: none;
-        outline: none;
+        background: #CC6534;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1200px) {
+    .heroContent {
+        max-width: 720px;
+        margin-left: 80px;
+
+
+        h1 {
+            font-size: 42px;
+        }
+
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .heroContent {
+        max-width: 640px;
+        padding: 32px 40px;
+
+
+        h1 {
+            font-size: 34px;
+        }
+
+
+        p {
+            font-size: 15px;
+        }
+    }
+}
+
+.searchBox {
+    flex-direction: row;
+    gap: 0;
+
+
+    input {
+        border-radius: 10px;
         font-size: 15px;
     }
 
 
     button {
-        padding: 14px 22px;
-        border-radius: 0 10px 10px 0;
-        border: none;
-        background: #f97316;
-        color: #fff;
+        width: auto;
+        border-radius: 10px;
         font-size: 15px;
-        cursor: pointer;
-        transition: background 0.2s ease;
-
-
-        // &:hover {
-        //     background: #ea580c;
-        // }
+        padding: 14px 22px;
+        margin-left: 10px;
     }
 }

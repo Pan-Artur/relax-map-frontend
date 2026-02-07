@@ -53,3 +53,38 @@
     display: block;
     margin-bottom: 12px;
 }
+
+@media (min-width: 768px) {
+
+    .advantages {
+        padding: 64px 40px;
+    }
+
+
+    .advantagesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages {
+        padding: 80px 60px;
+    }
+
+
+    .advantagesTitle {
+        font-size: 28px;
+        text-align: left;
+    }
+
+
+    .advantagesGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+
+    .advCard {
+        padding: 28px;
+    }
+}
