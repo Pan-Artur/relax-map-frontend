@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { loadFromLocalStorage } from "./app/store/authSlice.js";
 import {
@@ -25,9 +25,9 @@ const App = () => {
   const user = useSelector(selectUser);
   const initialized = useSelector(selectInitialized);
 
-  useEffect(() => {
-    dispatch(loadFromLocalStorage());
-  }, [dispatch]);
+	useEffect(() => {
+		dispatch(loadFromLocalStorage())
+	}, [dispatch])
 
   if (!initialized) {
     return <div>Loading auth...</div>;

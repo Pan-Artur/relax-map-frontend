@@ -10,15 +10,7 @@ const defaultImageSrc =
 
 // #endregion
 
-export function ProfileInfo() {
-	const { userId } = useParams()
-	// const { id } = api.me()
-	const user = {
-		avatar: '',
-		name: 'vots',
-		locationsCount: 3,
-	}
-	console.log(userId)
+export function ProfileInfo({ userId, user }) {
 
 	return (
 		<section className={style.section}>

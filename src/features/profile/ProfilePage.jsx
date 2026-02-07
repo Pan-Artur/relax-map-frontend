@@ -1,17 +1,22 @@
 import style from './ProfilePage.module.css'
 import { ProfileInfo } from '../../components/ProfileInfo/ProfileInfo'
 import { ProfilePlaceholder } from '../../components/ProfilePlaceholder/ProfilePlaceholder'
+import { useParams } from 'react-router-dom'
+import { api } from '../../app/services/apiClient'
 
 export const ProfilePage = () => {
-	// TODO: articlesAmount logic
-
-	const articlesAmount = 0
+	const { userId } = useParams()
+	const userInfo = api.getUserById(userId)
 
 	return (
 		<div className={style.container}>
-			<ProfileInfo />
+			<ProfileInfo userId={userId} user={userInfo} />
 
-			{articlesAmount === 0 ? <ProfilePlaceholder /> : null}
+			{/* TODO: location grid add */}
+
+			{userInfo.locationCount === 0 ? (
+				<ProfilePlaceholder userId={userId} />
+			) : null}
 		</div>
 	)
 }
