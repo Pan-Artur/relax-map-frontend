@@ -6,7 +6,7 @@ export const LocationsPage = () => {
   return (
     <>
       <h2>Усі місця відпочинку</h2>
-      <FilterPanel />
+      {/* <FilterPanel /> */}
 
       <LocationsGrid />
     </>

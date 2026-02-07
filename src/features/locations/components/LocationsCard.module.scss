@@ -1,0 +1,61 @@
+.locationsCard {
+  &Img {
+    width: 421px;
+    height: 421px;
+    background-color: #1f97e2;
+    @media screen and (max-width: 768px) {
+      width: 335px;
+      height: 335px;
+    }
+  }
+  &Box {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &Text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4c2613;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 12px;
+    }
+  }
+  &List {
+    display: flex;
+  }
+
+  &Title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: #4c2613;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 18px;
+    }
+  }
+  &Button {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    width: 100%;
+    padding: 9px;
+    
+    background: rgba(0, 0, 0, 0.05);
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #4c2613;
+
+    @media screen and (max-width: 1200px) {
+          padding: 6px;
+
+    }
+  }
+}
