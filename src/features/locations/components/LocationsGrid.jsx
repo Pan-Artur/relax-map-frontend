@@ -1,4 +1,5 @@
 import { LocationsCard } from "./LocationsCard";
+import styles from './LocationsGrid.module.scss'
 
 export const LocationsGrid = () => {  
   const locationsData = [
@@ -9,7 +10,7 @@ export const LocationsGrid = () => {
       region: "kyivska",
       author: "Dima Vakhmianin",
       poster: "",
-      place: 'monument',
+      place: "Іст. пам'ятка",
       description:
         "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
       reviews: [],
@@ -22,7 +23,7 @@ export const LocationsGrid = () => {
       region: "kyivska",
       author: "Dima Vakhmianin",
       poster: "",
-      place: 'monument',
+      place: "Іст. пам'ятка",
 
       description:
         "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
@@ -36,7 +37,7 @@ export const LocationsGrid = () => {
       region: "kyivska",
       author: "Dima Vakhmianin",
       poster: "",
-      place: 'monument',
+      place: "Іст. пам'ятка",
 
       description:
         "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
@@ -44,9 +45,9 @@ export const LocationsGrid = () => {
     },
   ];
   return(
-    <ul>
+    <ul className={styles.locationsGrid}>
       {locationsData.map((location) => (
-        <li key={location.id}><LocationsCard place={location.place} img={location.poster} rating={location.rate} title={location.title} /></li>
+        <li className={styles.locationsGridCard} key={location.id}><LocationsCard place={location.place} img={location.poster} rating={location.rate} title={location.title} /></li>
         
       ))}
     </ul>
