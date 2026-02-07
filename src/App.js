@@ -53,7 +53,7 @@ const App = () => {
             }
           />
           <Route
-            path={`profile/${user?.id}`}
+            path={"profile/:id"}
             element={
               isLoggedIn && user?.id ? (
                 <ProfilePage />
