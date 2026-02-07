@@ -3,7 +3,6 @@
 	"version": "0.1.0",
 	"private": false,
 	"type": "module",
-	"homepage": "https://Pan-Artur.github.io/relax-map-frontend/",
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.11.2",
 		"@testing-library/dom": "^10.4.1",
