@@ -1,7 +1,67 @@
 import styles from "./FilterPanel.module.scss";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { useState } from "react";
+
+const regions = [
+  { id: "", label: "Вся Україна" },
+  { id: "kievska", label: "Київська " },
+  { id: "zitomirska", label: "Житомирська " },
+  { id: "kirovogradska", label: "Кіровоградська " },
+  { id: "poltavska", label: "Полтавська " },
+  { id: "cherkaska", label: "Черкаська " },
+  { id: "volinska", label: "Волинська " },
+  { id: "dnipropetrovska", label: "Дніпропетровська " },
+  { id: "donetska", label: "Донецька " },
+  { id: "zakarpatska", label: "Закарпатська " },
+  { id: "zaporizka", label: "Запорізька " },
+  { id: "ivanoFrankivska", label: "Івано-Франківська " },
+  { id: "luganska", label: "Луганська " },
+  { id: "lvivska", label: "Львівська " },
+  { id: "mikolaivska", label: "Миколаївська " },
+  { id: "odeska", label: "Одеська " },
+  { id: "rivenska", label: "Рівненська " },
+  { id: "ternopilska", label: "Тернопільська " },
+  { id: "kharkivska", label: "Харківська " },
+  { id: "hmelnicka", label: "Хмельницька " },
+  { id: "chernivecka", label: "Чернівецька " },
+  { id: "chernigivska", label: "Чернігівська " },
+  { id: "hersonska", label: "Херсонська " },
+  { id: "sumska", label: "Сумська " },
+  { id: "krim", label: "АР Крим" },
+  { id: "vinnicka", label: "Вінницька " },
+];
+
+const places = [
+  { id: "beach", label: "Пляж" },
+  { id: "camping", label: "Кемпінг" },
+  { id: "park", label: "Парк" },
+  { id: "monument", label: "Іст. пам'ятка" },
+];
+
+const sortOptions = [
+  { id: "popular", label: "За популярністю" },
+  { id: "highRated", label: "За рейтингом" },
+  { id: "new", label: "Новіші спочатку" },
+];
 
 export const FilterPanel = () => {
+  const [regionState, changeRegionState] = useState(false);
+  const [placeState, changePlaceState] = useState(false);
+  const [sortState, changeSortingState] = useState(false);
+
+  const [selectedRegion, setSelectedRegion] = useState({ id: "", label: "Область" });
+  const [selectedPlaces, setSelectedPlaces] = useState([]);
+  const [selectedSort, setSelectedSort] = useState({ id: "", label: "Сортування" });
+
+  const togglePlace = (place) => {
+    const exists = selectedPlaces.find((p) => p.id === place.id);
+    if (exists) {
+      setSelectedPlaces(selectedPlaces.filter((p) => p.id !== place.id));
+    } else {
+      setSelectedPlaces([...selectedPlaces, place]);
+    }
+  };
+
   return (
     <section className={styles.filterPanel}>
       <form className={styles.filterPanelForm}>
@@ -11,234 +71,111 @@ export const FilterPanel = () => {
             type="text"
             placeholder="Пошук"
           />
-          <button className={styles.filterPanelButton} type="button">
-            Область{" "}
-            <span className={styles.filterPanelButtonIcon}>
-              <RiArrowDropDownLine size="24px" />
-            </span>
-          </button>
-          {/* className={styles.filterPanelRegions} */}
-          <ul className={styles.isHidden}>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="all" />
-                Вся Україна
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="kievska" />
-                Київська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="zitomirska" />
-                Житомирська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="kirovogradska" />
-                Кіровоградська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="poltavska" />
-                Полтавська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="cherkaska" />
-                Черкаська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="volinska" />
-                Волинська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="dnipropetrovska" />
-                Дніпропетровська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="donetska" />
-                Донецька область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="zakarpatska" />
-                Закарпатська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="zaporizka" />
-                Запорізька область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="ivanoFrankivska" />
-                Івано-Франківська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="luganska" />
-                Луганська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="lvivska" />
-                Львівська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="mikolaivska" />
-                Миколаївська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="odeska" />
-                Одеська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="rivenska" />
-                Рівненська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="ternopilska" />
-                Тернопільська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="kharkivska" />
-                Харківська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="hmelnicka" />
-                Хмельницька область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="chernivecka" />
-                Чернівецька область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="chernigivska" />
-                Чернігівська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="hersonska" />
-                Херсонська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="sumska" />
-                Сумська область
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="krim" />
-                АР Крим
-              </label>
-            </li>
-            <li className={styles.filterPanelRegionsItem}>
-              <label>
-                <input type="radio" name="region" id="vinnicka" />
-                Вінницька область
-              </label>
-            </li>
-          </ul>
 
-          <button className={styles.filterPanelButton} type="button">
-            Тип локації
-            <span className={styles.filterPanelButtonIcon}>
-              <RiArrowDropDownLine size="24px" />
-            </span>
-          </button>
-          {/* className={styles.filterPanelPlaces} */}
-          <ul className={styles.isHidden}>
-            <li className={styles.filterPanelPlacesItem}>
-              <label>
-                <input type="checkbox" name="Пляж" id="beach" />
-                Пляж
-              </label>
-            </li>
-            <li className={styles.filterPanelPlacesItem}>
-              <label>
-                <input type="checkbox" name="place" id="camping" />
-                Кемпінг
-              </label>
-            </li>
-            <li className={styles.filterPanelPlacesItem}>
-              <label>
-                <input type="checkbox" name="place" id="park" />
-                Парк
-              </label>
-            </li>
-            <li className={styles.filterPanelPlacesItem}>
-              <label>
-                <input type="checkbox" name="place" id="monument" />
-                Іст. пам'ятка
-              </label>
-            </li>
-          </ul>
+          <div className={styles.filterPanelDropdown}>
+            <button
+              className={styles.filterPanelButton}
+              type="button"
+              onClick={() => changeRegionState((state) => !state)}
+            >
+              {selectedRegion.label}
+              <span className={styles.filterPanelButtonIcon}>
+                <RiArrowDropDownLine size="24px" />
+              </span>
+            </button>
+
+            {regionState && (
+              <div className={styles.filterPanelRegionsBox}>
+                <ul className={styles.filterPanelRegions}>
+                  {regions.map((region) => (
+                    <li
+                      key={region.id}
+                      className={styles.filterPanelRegionsItem}
+                    >
+                      <label className={styles.filterPanelRegionsLabel}>
+                        <input
+                          type="radio"
+                          className={styles.filterPanelRegionsChecknox}
+                          name="region"
+                          checked={selectedRegion.id === region.id}
+                          onChange={() => setSelectedRegion(region)}
+                        />
+                        {region.label}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.filterPanelDropdown}>
+            <button
+              className={styles.filterPanelButton}
+              type="button"
+              onClick={() => changePlaceState((state) => !state)}
+            >
+              Тип локації
+              <span className={styles.filterPanelButtonIcon}>
+                <RiArrowDropDownLine size="24px" />
+              </span>
+            </button>
+
+            {placeState && (
+              <div className={styles.filterPanelRegionsBox}>
+                <ul className={styles.filterPanelRegions}>
+                  {places.map((place) => (
+                    <li key={place.id} className={styles.filterPanelRegionsItem}>
+                      <label className={styles.filterPanelRegionsLabel}>
+                        <input
+                          type="checkbox"
+                          className={styles.filterPanelRegionsChecknox}
+                          checked={selectedPlaces.some((p) => p.id === place.id)}
+                          onChange={() => togglePlace(place)}
+                        />
+                        {place.label}
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
-        <button className={styles.filterPanelButton} type="button">
-          Сортування
-          <span className={styles.filterPanelButtonIcon}>
+        <div className={styles.filterPanelDropdown}>
+          <button
+            className={styles.filterPanelButton}
+            type="button"
+            onClick={() => changeSortingState((state) => !state)}
+          >
+            {selectedSort.label}
+            <span className={styles.filterPanelButtonIcon}>
               <RiArrowDropDownLine size="24px" />
             </span>
-        </button>
-        {/* styles.filterPanelSort */}
-        <ul className={styles.isHidden}>
-          <li className={styles.filterPanelSortItem}>
-            <label>
-              <input type="radio" name="filterPanel" id="popular" />
-              За популярністю
-            </label>
-          </li>
-          <li className={styles.filterSortItem}>
-            <label>
-              <input type="radio" name="filterPanel" id="highRated" />
-              За рейтингом
-            </label>
-          </li>
-          <li className={styles.filterSortItem}>
-            <label>
-              <input type="radio" name="filterPanel" id="new" />
-              Новіші спочатку
-            </label>
-          </li>
-        </ul>
+          </button>
+
+          {sortState && (
+            <div className={styles.filterPanelRegionsBox}>
+              <ul className={styles.filterPanelRegions}>
+                {sortOptions.map((option) => (
+                  <li key={option.id} className={styles.filterPanelRegionsItem}>
+                    <label className={styles.filterPanelRegionsLabel}>
+                      <input
+                        type="radio"
+                        className={styles.filterPanelRegionsChecknox}
+                        name="sort"
+                        checked={selectedSort.id === option.id}
+                        onChange={() => setSelectedSort(option)}
+                      />
+                      {option.label}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </form>
     </section>
   );
