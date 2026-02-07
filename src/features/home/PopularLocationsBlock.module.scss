@@ -11,19 +11,33 @@
       font-size: 28px;
       font-weight: 700;
     }
+
+    button {
+      width: 136px;
+      height: 48px;
+      background-color: #CC6534;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+    }
   }
 
   &__nav {
     display: flex;
     gap: 8px;
+    justify-content: end;
 
     button {
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       border-radius: 8px;
-      border: 1px solid #000;
-      background: transparent;
+      border: 1px solid #00000026;
+      background: #FFE5D9;
       cursor: pointer;
+      transition: 0.2s;
     }
   }
 

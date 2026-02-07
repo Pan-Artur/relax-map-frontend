@@ -1,6 +1,6 @@
 import { HeroBlock } from "./HeroBlock";
 import { AdvantagesBlock } from "./AdvantagesBlock";
-// import PopularLocationsBlock from "./PopularLocationsBlock";
+import PopularLocationsBlock from "./PopularLocationsBlock";
 import ReviewsBlock from "./ReviewsBlock";
   
 export const HomePage = () => {
@@ -8,7 +8,7 @@ export const HomePage = () => {
     <>
       <HeroBlock />
       <AdvantagesBlock />
-      {/* <PopularLocationsBlock /> */}
+      <PopularLocationsBlock />
       <ReviewsBlock />
     </>
   );
