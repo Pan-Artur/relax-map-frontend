@@ -5,11 +5,13 @@
     display: flex;
     justify-content: space-between;
   }
-  &Box{
+  &Box {
     display: flex;
     gap: 24px;
-
   }
+  &Dropdown{
+      position: relative;
+    }
   &Input {
     border: 0;
     outline: 1px solid rgba(0, 0, 0, 0.15);
@@ -26,14 +28,27 @@
     line-height: 150%;
     color: #4c4c4c;
   }
-  &Button {
-    border: 0;
+  &Regions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
 
-      outline: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 6px;
-      padding: 8px;
-      width: 199px;
-      height: 43px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 6px 6px;
+    background: #ffe5d9;
+    transition: 500ms;
+
+    max-height: 500px;
+    overflow-y: auto;
+
+    &Label {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: start;
 
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
@@ -41,18 +56,77 @@
       line-height: 150%;
       color: #4c4c4c;
 
-      background-color: #ffe5d9;
+      position: relative;
+    }
 
-      display: flex;
-      justify-content: space-between;
+    
 
-      &Icon {
-        width: 24px;
-        height: 24px;
+    
+    &Checknox {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+    }
+    &Item {
+      border-radius: 4px;
+      padding: 4px 8px;
+    transition: 250ms;
+
+
+      &:hover,
+      &:focus {
+        background: #ffa47aa1;
+      }
+
+      &:has(.filterPanelRegionsChecknox:checked) {
+        background: #ffa57a;
       }
     }
-  &Regions {
-    
+
+    &Box {
+      position: absolute;
+      top: 35px;
+      left: -1px;
+      background-color: #fff;
+      width: 201px;
+    }
+  }
+  &Button {
+    border: 0;
+    position: relative;
+
+    outline: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 8px;
+    width: 199px;
+    height: 43px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #4c4c4c;
+    text-align: left;
+
+    background-color: #ffe5d9;
+
+    transition: 500ms;
+
+    display: flex;
+    justify-content: space-between;
+
+    &:focus,
+    &:hover {
+      outline: 1px solid #ffa57a;
+    }
+
+    &Icon {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 .isHidden {
