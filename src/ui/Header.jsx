@@ -95,7 +95,7 @@ export const Header = () => {
               </li>
               <li className={style.mobileItem}>
                 <Link
-                  to={`/profile/${user?.id}`}
+                  to={`/profile/${user.id}`}
                   className={style.mobileNavLink}
                   style={{ display: isLoggedIn ? "flex" : "none" }}
                 >

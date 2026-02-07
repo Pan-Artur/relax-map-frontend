@@ -13,7 +13,7 @@ export const NavBar = () => {
             <ul className={style.list}>
                 <li className={style.item}><Link to="/" className={style.navLink}>Головна</Link> </li>
                 <li className={style.item}> <Link to="/locations" className={style.navLink}>Місця відпочинку</Link></li>
-                <li className={style.item} style={{display: isLoggedIn ? "block" : "none",}}><Link to={`profile/${user?.id}`} className={style.navLink}>Мій Профіль</Link></li>
+                <li className={style.item} style={{display: isLoggedIn ? "block" : "none",}}><Link to={`/profile/${user.id}`} className={style.navLink}>Мій Профіль</Link></li>
             </ul>
         </nav>
     )
