@@ -4,6 +4,7 @@ const initialState = {
   user: null,
   token: null,
   isLoggedIn: false,
+  initialized: false,
 };
 
 const authSlice = createSlice({
@@ -32,6 +33,8 @@ const authSlice = createSlice({
         state.token = parsed.token;
         state.isLoggedIn = true;
       }
+
+      state.initialized = true;
     },
   },
 });

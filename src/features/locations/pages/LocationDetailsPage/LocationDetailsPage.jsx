@@ -1,11 +1,15 @@
 import { useParams } from "react-router-dom";
-import { api } from "../../../app/services/apiClient";
+import { api } from "../../../../app/services/apiClient";
 import { useEffect, useState } from "react";
 
-import { LocationInfoBlock } from "../blocks/LocationInfoBlock";
-import { LocationGallery } from "../blocks/LocationGallery";
-import { LocationDescription } from "../blocks/LocationDescription";
-import { ReviewsSection } from "../components/ReviewsSection";
+import { Container } from "../../../../components/Container/Container";
+
+import { LocationInfoBlock } from "../../blocks/LocationInfoBlock/LocationInfoBlock";
+import { LocationGallery } from "../../blocks/LocationGallery/LocationGallery";
+import { LocationDescription } from "../../blocks/LocationDescription";
+import { ReviewsSection } from "../../components/ReviewsSection";
+
+import style from "./LocationDetailsPage.module.css";
 
 export const LocationDetailsPage = () => {
   const { locationId } = useParams();
@@ -36,8 +40,12 @@ export const LocationDetailsPage = () => {
 
   return (
     <>
-      <LocationInfoBlock location={location} />
-      <LocationGallery images={location.images} />
+      <div className={style.hero}>
+        <Container>
+          <LocationInfoBlock location={location} />
+          <LocationGallery images={location.images} />
+        </Container>
+      </div>
       <LocationDescription description={location.description} />
       <ReviewsSection locationId={location.id} />
     </>
