@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
-
+    width: 100%;
     h2 {
       font-size: 28px;
       font-weight: 700;
@@ -41,9 +41,6 @@
     }
   }
 
-  &__slider {
-    overflow: hidden;
-  }
 
   &__track {
     display: flex;

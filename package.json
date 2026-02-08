@@ -23,7 +23,8 @@
 		"react-scripts": "5.0.1",
 		"redux": "^5.0.1",
 		"redux-persist": "^6.0.0",
-		"sass": "^1.97.3"
+		"sass": "^1.97.3",
+		"swiper": "^12.1.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",
