@@ -41,13 +41,11 @@
     }
   }
 
-  &__slider {
-    overflow: hidden;
-  }
 
   &__track {
     display: flex;
     gap: 24px;
     transition: transform 0.4s ease;
+    overflow: hidden;
   }
 }
