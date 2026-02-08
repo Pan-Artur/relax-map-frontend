@@ -5,7 +5,11 @@ import styles from "./PopularLocationsBlock.module.scss";
 import { Container } from "../../components/Container/Container.jsx";
 import {ReactComponent as ArrowBack} from '../../assets/icons/arrow_back.svg'
 import {ReactComponent as  ArrowNext} from '../../assets/icons/arrow_forward.svg'
-import {Swiper,sli} from "swiper";
+import { Swiper,SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 export default function PopularLocationsBlock() {
   const [locations, setLocations] = useState([]);
   const [index, setIndex] = useState(0);
@@ -13,6 +17,9 @@ export default function PopularLocationsBlock() {
   useEffect(() => {
     fetchPopularLocations().then(setLocations);
   }, []);
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   const next = () => {
     setIndex((i) => (i === locations.length - 1 ? 0 : i + 1));
@@ -22,33 +29,47 @@ export default function PopularLocationsBlock() {
   };
   return (
     <Container>
-      <section className={styles.popular}>
         <div className={styles.popular__header}>
           <h2>Популярні локації</h2>
-          <button>
-            <p>Всі локації</p>
-          </button>
+          <button> <Link to="/locations">Всі локації</Link></button>
         </div>
 
-        <div className={styles.popular__slider}>
-          <div
-            className={styles.popular__track}
-            style={{ transform: `translateX(-${index * 300}px)` }}
-          >
-            {locations.map((item) => (
-              <LocationsCard key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
-        <div className={styles.popular__nav}>
-          <button onClick={prev}>
-            <ArrowBack/>
-          </button>
-          <button onClick={next}>
-            <ArrowNext/>
-          </button>
-        </div>
-      </section>
+      <div className={styles.popular__slider}>
+        <Swiper 
+        modules={[Navigation]}
+        slidesPerView={3}
+        spaceBetween={20}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        >
+          {locations.map(item => (
+            <SwiperSlide key={item.id}>
+              <LocationsCard item={item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className={styles.popular__nav}>
+        <button ref={prevRef}>
+          <ArrowBack/>
+        </button>
+        <button ref={nextRef}>
+          <ArrowNext/>
+        </button>
+      </div>
     </Container>
   );
 }
