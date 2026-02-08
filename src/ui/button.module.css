@@ -41,7 +41,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1374px){
     .signUpBtn{
         width: 114px;
         height: 32px;
@@ -55,7 +55,7 @@
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1374px){
     .signUpBtn{
         width: 137px;
         height: 38px;
