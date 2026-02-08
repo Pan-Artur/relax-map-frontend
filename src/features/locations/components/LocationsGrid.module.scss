@@ -9,11 +9,12 @@
     border: 0px solid rgba(0, 0, 0, 0.15);
 
     border-radius: 12px;
+    width: 421px;
 
     height: 624px;
     background: #ffe5d9;
     overflow: hidden;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1300px) {
       width: 335px;
       height: 520px;
     }
