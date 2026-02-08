@@ -28,5 +28,5 @@ export const useAuth = () => {
     dispatch(loadFromLocalStorage());
   };
 
-  return { user, isLoggedIn, doLogin, doLogin, doLogout, loadAuth };
-}
+  return { user, isLoggedIn, doLogin, doLogout, loadAuth };
+};

@@ -12,20 +12,20 @@
     color: black;
 }
 
-@media (min-width: 378px) {
+@media (min-width: 378px) and (max-width: 768px){
     .userList{
         display: block ;
         padding: 0;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px){
     .userList{
         padding: 0 ;
     }
 
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
     .userList{
         position: absolute; 
         top: 9%;

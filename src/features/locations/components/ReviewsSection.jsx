@@ -1,3 +1,5 @@
-export const RewiewsSection = () => {
-    
-}
+export const ReviewsSection = () => {
+  return (
+    <></>
+  );
+};

@@ -1,5 +1,7 @@
 import { LocationsCard } from "./LocationsCard";
 import styles from './LocationsGrid.module.scss'
+import {Container} from '../../../components/Container/Container'
+
 
 export const LocationsGrid = () => {  
   const locationsData = [
@@ -43,13 +45,30 @@ export const LocationsGrid = () => {
         "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
       reviews: [],
     },
+    {
+      id:4 ,
+
+      rate: 5,
+      title: "Києво-печерська лавра",
+      region: "kyivska",
+      author: "Dima Vakhmianin",
+      poster: "",
+      place: "Іст. пам'ятка",
+
+      description:
+        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
+      reviews: [],
+    },
   ];
   return(
-    <ul className={styles.locationsGrid}>
+    <Container>
+      <ul className={styles.locationsGrid}>
       {locationsData.map((location) => (
         <li className={styles.locationsGridCard} key={location.id}><LocationsCard place={location.place} img={location.poster} rating={location.rate} title={location.title} /></li>
         
       ))}
     </ul>
+    </Container>
+    
   )
 };

@@ -1,0 +1,90 @@
+.advantages {
+    background: #FFF2EC;
+    padding: 80px 60px;
+}
+
+
+.advantagesTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #1B391B;
+}
+
+
+.advantagesGrid {
+    display: flex;
+    justify-content: center;
+}
+
+
+.advCard {
+    background: #FFE5D9;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 16px;
+    width: 421px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h3 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #1B391B;
+    }
+
+
+    p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        opacity: 0.8;
+        color: #1B391B;
+    }
+}
+
+.icon {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+
+    .advantages {
+        padding: 64px 40px;
+    }
+
+
+    .advantagesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .advantages {
+        padding: 80px 60px;
+    }
+
+
+    .advantagesTitle {
+        font-size: 28px;
+        text-align: left;
+    }
+
+
+    .advantagesGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+
+    .advCard {
+        padding: 28px;
+    }
+}
