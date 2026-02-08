@@ -1,23 +1,37 @@
 .reviews {
-  padding: 60px 0;
+  padding: 40px 0;
+  background-color: #FFF2EC;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
 
   &__header {
+    color: #4C2613;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     h2 {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
+
+      @media (min-width: 768px) {
+        font-size: 28px;
+      }
     }
   }
 
   &__nav {
     display: flex;
     gap: 8px;
-    padding-top: 30px;
 
     button {
       width: 48px;
@@ -26,11 +40,11 @@
       border: 1px solid #00000026;
       background: #FFE5D9;
       cursor: pointer;
-      transition: 0.2s;
 
-      // &:hover {
-      //   background: #000;
-      // }
+      @media (min-width: 768px) {
+        width: 48px;
+        height: 48px;
+      }
     }
   }
 
@@ -40,47 +54,58 @@
 
   &__track {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     transition: transform 0.4s ease;
+
+    @media (min-width: 768px) {
+      gap: 24px;
+    }
   }
 }
 
 .review-card {
-  width: 340px;
   flex-shrink: 0;
+  width: 100%;
+  max-width: 320px;
   background: #fde7db;
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+
+  @media (min-width: 768px) {
+    max-width: 340px;
+    padding: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 360px;
+  }
 
   &__rating {
+    color: #000000;
     font-size: 14px;
     margin-bottom: 12px;
   }
 
   &__text {
     font-size: 14px;
-    font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: #4C2613;
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
   }
 
   &__author {
-    font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    color: #4C2613;
   }
 
   &__type {
-    font-family: "Montserrat", sans-serif;
     font-size: 12px;
     opacity: 0.6;
+    white-space: nowrap;
   }
 }

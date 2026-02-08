@@ -10,7 +10,7 @@ import { Button } from "./Button.jsx";
 import { ReactComponent as BuregerMenu } from "../assets/icons/burger.svg";
 import { ReactComponent as LogOut } from "../assets/icons/LogOut.svg";
 import { UserMenu } from "./UserMenu.jsx";
-
+import { Container } from "../components/Container/Container.jsx";
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenMenu, setOpenMenu] = useState(false);
@@ -28,6 +28,7 @@ export const Header = () => {
 
   return (
     <header className={style.header}>
+      <Container>
       <div className={style.headerContainer}>
         <div className={style.logoContainer}>
           <Logo />
@@ -138,6 +139,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      </Container>
     </header>
   );
 };

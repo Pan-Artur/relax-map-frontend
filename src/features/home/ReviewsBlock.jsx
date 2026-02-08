@@ -25,6 +25,27 @@ const fetchReviews = async () => [
     author: "Марія Шевченко",
     locationType: "Ліс",
   },
+    {
+    id: 4,
+    rating: 5,
+    text: "Неймовірне місце для перезавантаження. Природа просто вау!",
+    author: "Олена Коваль",
+    locationType: "Море",
+  },
+  {
+    id: 5,
+    rating: 4,
+    text: "Тихо, спокійно, дуже атмосферно. Обовʼязково повернусь.",
+    author: "Ігор Петров",
+    locationType: "Гори",
+  },
+  {
+    id: 6,
+    rating: 5,
+    text: "Ідеальне місце для відпочинку від міської метушні.",
+    author: "Марія Шевченко",
+    locationType: "Ліс",
+  },
 ];
 
 export default function ReviewsBlock() {
@@ -47,7 +68,7 @@ export default function ReviewsBlock() {
         <div className={styles.reviews__slider}>
           <div
             className={styles.reviews__track}
-            style={{ transform: `translateX(-${index * 360}px)` }}
+            style={{ transform: `translateX(calc(-${index} * (100% + 16px)))`, }}
           >
             {reviews.map((review) => (
               <div key={review.id} className={styles["review-card"]}>
@@ -79,11 +100,3 @@ export default function ReviewsBlock() {
     </section>
   );
 }
-
-// const Stars = ({ value }) => (
-//     <div className="flex gap-1 text-sm">
-//         {Array.from({ length: 5 }).map((_, i) => (
-//             <span key={i}>{i < value ? "★" : "☆"}</span>
-//         ))}
-//     </div>
-// );
