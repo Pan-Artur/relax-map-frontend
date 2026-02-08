@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
 }
+.backgroundContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .logoContainer{
     width: 121px;
     height: 29px;
@@ -13,19 +18,11 @@
     align-items: center;
     justify-content: space-between;
 }
-.headerContainer{
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-}
 .NavBarAndbuttons{
     display: flex;
     align-items: center;
 }
 @media (min-width: 375px) and (max-width: 768px){
-    .headerContainer{
-        width: 70%;
-    }
     .mobileNavBarAndButtons{
         width: 32px;
         height: 32px;
@@ -125,10 +122,7 @@
     }
 
 }
-@media  (min-width: 768px) and (max-width: 1024px)  {
-    .headerContainer{
-        width: 82%;
-    }
+@media  (min-width: 768px) and (max-width: 1374px)  {
     .burgerMenu{
         display: flex;
         flex-direction: column;
@@ -189,7 +183,7 @@
         display: none;
     }
     .shareLoctionBtn{
-        display: flex !important; 
+        display: flex ; 
         width: 196px;
         height: 38px;
         background: #CC6534;
@@ -230,10 +224,7 @@
         display:none !important; 
     }
 }
-@media (min-width: 1024px) {
-    .headerContainer{
-        width: 91%;
-    }
+@media (min-width: 1374px) {
     .NavBarAndbuttons{
         display: flex;
         width: 830px;

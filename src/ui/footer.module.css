@@ -11,6 +11,11 @@
     justify-content: space-between;
     border-bottom: 1px solid #00000026;
 }
+.footerContainer{
+    width: 100%;
+    height: 100%;
+    
+}
 .logoContainer{
     
     display: flex;
@@ -42,10 +47,6 @@
 @media (min-width: 375px) and (max-width: 768px){
     .footer{
         height: 476px;
-    }
-    .footerContainer{
-        width: 70%;
-        height: 340px;
     }
     .topFooterContainer{
         height: 272px;
@@ -81,13 +82,9 @@
         height: 32px;
     }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1374px) {
     .footer{
         height: 274px;
-    }
-    .footerContainer{
-        width: 82%;
-        height: 178px;
     }
     .topFooterContainer{
         height: 128px;
@@ -119,13 +116,9 @@
         height: 24px;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1374px) {
     .footer{
         height: 283px;
-    }
-    .footerContainer{
-        width: 91%;
-        height: 123px;
     }
     .topFooterContainer{
         height: 67px;
