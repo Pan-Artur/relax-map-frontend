@@ -94,15 +94,15 @@ export const Header = () => {
                   Місця відпочинку
                 </Link>
               </li>
-              {/* <li className={style.mobileItem}> */}
-                {/* <Link
-                  to={`/profile/${user.id}`}
+              <li className={style.mobileItem}>
+                <Link
+                  to={`/profile/${user?.id}`}
                   className={style.mobileNavLink}
                   style={{ display: isLoggedIn ? "flex" : "none" }}
                 >
                   Мій Профіль
-                </Link> */}
-              {/* </li> */}
+                </Link>
+              </li>
               <div
                 className={style.UserAvatarAndName}
                 onClick={openUserMenu}
