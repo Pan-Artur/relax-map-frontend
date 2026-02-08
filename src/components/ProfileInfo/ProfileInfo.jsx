@@ -3,6 +3,7 @@ import React from 'react'
 import { api } from '../../app/services/apiClient.js'
 import style from './ProfileInfo.module.css'
 import { useParams } from 'react-router-dom'
+import { Container } from '../Container/Container.jsx'
 
 // #region image
 const defaultImageSrc =
@@ -11,10 +12,9 @@ const defaultImageSrc =
 // #endregion
 
 export function ProfileInfo({ userId, user }) {
-
 	return (
 		<section className={style.section}>
-			<div className={style.container}>
+			<Container className={style.container}>
 				<img
 					className={style.image}
 					src={user.avatar || defaultImageSrc}
@@ -24,7 +24,7 @@ export function ProfileInfo({ userId, user }) {
 					<h2 className={style.name}>{user.name}</h2>
 					<p className={style.articlesCount}>Статей: {user.locationsCount}</p>
 				</div>
-			</div>
+			</Container>
 		</section>
 	)
 }

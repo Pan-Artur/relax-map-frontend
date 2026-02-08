@@ -7,6 +7,12 @@ import { api } from '../../app/services/apiClient'
 export const ProfilePage = () => {
 	const { userId } = useParams()
 	const userInfo = api.getUserById(userId)
+	// const userId = 'asdds-123-dasdass'
+	// const userInfo = {
+	// 	avatar: '',
+	// 	name: 'vots',
+	// 	locationsCount: 0,
+	// }
 
 	return (
 		<div className={style.container}>
@@ -14,7 +20,7 @@ export const ProfilePage = () => {
 
 			{/* TODO: location grid add */}
 
-			{userInfo.locationCount === 0 ? (
+			{userInfo.locationsCount === 0 ? (
 				<ProfilePlaceholder userId={userId} />
 			) : null}
 		</div>

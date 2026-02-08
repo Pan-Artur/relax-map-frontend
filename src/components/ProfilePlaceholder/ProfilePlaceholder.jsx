@@ -2,12 +2,14 @@ import React from 'react'
 import style from './ProfilePlaceholder.module.css'
 import { Link, useParams } from 'react-router-dom'
 import { api } from '../../app/services/apiClient'
+import { Container } from '../Container/Container'
 
 export function ProfilePlaceholder({ userId }) {
 	const loggedId = api.me().id
+	// const loggedId = 'asdds-123-dasdas'
 
 	return (
-		<div className={style.container}>
+		<Container className={style.container}>
 			<div className={style.box}>
 				<p className={style.text}>
 					{userId === loggedId
@@ -24,6 +26,6 @@ export function ProfilePlaceholder({ userId }) {
 					</button>
 				</Link>
 			</div>
-		</div>
+		</Container>
 	)
 }
