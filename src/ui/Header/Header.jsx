@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectIsLoggedIn, selectUser } from "../app/store/authSelectors.js";
+import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 
 import style from "./header.module.css";
-import { Logo } from "./Logo.jsx";
-import { NavBar } from "./NavBar.jsx";
-import { Button } from "./Button.jsx";
-import { ReactComponent as BuregerMenu } from "../assets/icons/burger.svg";
-import { ReactComponent as LogOut } from "../assets/icons/LogOut.svg";
-import { UserMenu } from "./UserMenu.jsx";
-import { Container } from "../components/Container/Container.jsx";
+import { Logo } from "../Logo/Logo.jsx";
+import { NavBar } from "../NavBar/NavBar.jsx";
+import { Button } from "../Button/Button.jsx";
+import { ReactComponent as BuregerMenu } from "../../assets/icons/burger.svg";
+import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
+import { UserMenu } from "../UserMenu/UserMenu.jsx";
+import { Container } from "../../components/Container/Container.jsx";
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenMenu, setOpenMenu] = useState(false);

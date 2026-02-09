@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from '../app/store/authSelectors';
+import { selectIsLoggedIn, selectUser } from '../../app/store/authSelectors';
 
 import style from './NavBar.module.css';
 

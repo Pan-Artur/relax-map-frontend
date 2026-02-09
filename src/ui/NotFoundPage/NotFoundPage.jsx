@@ -1,5 +1,5 @@
 import { Container } from "../../components/Container/Container";
-import { ReactComponent as NotFound} from '../assets/icons/not found.svg'
+import { ReactComponent as NotFound} from '../../assets/icons/not found.svg'
 import style from "./NotFoundPage.module.css"
 export const NotFoundPage = () => {
   return (
