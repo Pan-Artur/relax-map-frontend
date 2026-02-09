@@ -34,7 +34,7 @@ export const Header = () => {
             <Logo />
           </div>
           <div className={style.NavBarAndbuttons}>
-            <NavBar isLogin={"kjh"} />
+            <NavBar />
             <div
               className={style.desctopBtns}
               style={{ display: isLoggedIn ? "none" : "flex" }}

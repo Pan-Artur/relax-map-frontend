@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import style from './UserMenu.module.css'
+import style from '../UserMenu/UserMenu.module.css'
 export const UserMenu = () => {
 
     return(
