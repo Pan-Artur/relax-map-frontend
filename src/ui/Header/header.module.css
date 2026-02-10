@@ -185,7 +185,7 @@
     .shareLoctionBtn{
         display: flex ; 
         width: 196px;
-        height: 38px;
+        height: 32px;
         background: #CC6534;
         color: white;
         border: none;
@@ -265,11 +265,16 @@
     .shareLoctionBtn{
         width: 245px;
         height: 38px;
+        justify-content: center;
+        align-items: center;
         background: #CC6534;
         color: white;
         border: none;
         border-radius: 6px;
         cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
     }
     .UserAvatarAndName{
         display: flex;

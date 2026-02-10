@@ -1,11 +1,11 @@
 import style from "./footer.module.css";
-import { Logo } from "./Logo";
-import { NavBar } from "./NavBar";
-import { ReactComponent as Facebook } from "../assets/icons/facebook.svg";
-import { ReactComponent as Instagram } from "../assets/icons/Instagram.svg";
-import { ReactComponent as Twitter } from "../assets/icons/Twitter(X).svg";
-import { ReactComponent as Youtube } from "../assets/icons/youtube.svg";
-import { Container } from "../components/Container/Container";
+import { Logo } from "../Logo/Logo";
+import { NavBar } from "../NavBar/NavBar";
+import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg";
+import { ReactComponent as Twitter } from "../../assets/icons/Twitter(X).svg";
+import { ReactComponent as Youtube } from "../../assets/icons/youtube.svg";
+import { Container } from "../../components/Container/Container";
 export const Footer = () => {
   return (
     <footer className={style.footer}>
@@ -22,7 +22,7 @@ export const Footer = () => {
               <Youtube className={style.socialIcon} />
             </div>
             <div className={style.footerNavBar}>
-              <NavBar />
+              <NavBar footer={false} />
             </div>
           </div>
           <div className={style.bottomFooterContainer}>

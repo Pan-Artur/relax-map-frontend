@@ -136,7 +136,8 @@
         height: 24px;
     }
     .footerNavBar{
-        width: 275px;
+        min-width: 275px;
+        max-width: 500px;
         height: 43px;
         margin-top: 0;
     }
