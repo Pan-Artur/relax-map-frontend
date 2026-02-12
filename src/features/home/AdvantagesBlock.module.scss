@@ -1,34 +1,47 @@
-.advantages {
+.advantages {    
     background: #FFF2EC;
-    padding: 80px 60px;
+//  padding: 80px 60px;
+    padding: 48px 16px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
 .advantagesTitle {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 28px;
-    margin-bottom: 40px;
     color: #1B391B;
 }
 
 
 .advantagesGrid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
 }
 
 
 .advCard {
-    background: #FFE5D9;
-    padding: 16px;
-    margin: 10px;
-    border-radius: 16px;
-    width: 421px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
+       background: #FFE5D9;
+//     padding: 16px;
+//     margin: 10px;
+//     border-radius: 16px;
+//     width: 421px;
+//     display: flex;
+//     align-items: flex-start;
+//     flex-direction: column;
+//     justify-content: center;
+    border-radius: 14px;
+    padding: 20px;
 
 
     h3 {
@@ -36,6 +49,8 @@
         font-weight: 700;
         margin-bottom: 8px;
         color: #1B391B;
+        margin-bottom: 8px;
+        font-size: 16px;
     }
 
 
@@ -47,6 +62,7 @@
         color: #1B391B;
     }
 }
+
 
 .icon {
     font-size: 28px;
@@ -71,18 +87,15 @@
         padding: 80px 60px;
     }
 
-
     .advantagesTitle {
         font-size: 28px;
         text-align: left;
     }
 
-
     .advantagesGrid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        // gap: 24px;
     }
-
 
     .advCard {
         padding: 28px;
