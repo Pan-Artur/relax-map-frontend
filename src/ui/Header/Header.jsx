@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 
 import style from "./header.module.css";
@@ -17,10 +17,12 @@ export const Header = () => {
   const [isOpenBurger, setOpenBurger] = useState(false);
   const [isOpenUserMenu, setOpenUserMenu] = useState(false);
 
+  const [isOpen, setOpen] = useState(false);
+  const [isOpenMenu, setOpenMenu] = useState(false);
+
   const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
-
   const toggleBurger = () => setOpenBurger(!isOpenBurger);
   const toggleUserMenu = () => setOpenUserMenu(!isOpenUserMenu);
 
@@ -32,6 +34,13 @@ export const Header = () => {
     }
   };
 
+  const openBurger = () => {
+    setOpen(!isOpen);
+  };
+
+  const openUserMenu = () => {
+    setOpenMenu(!isOpenMenu);
+  };
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -52,40 +61,15 @@ export const Header = () => {
           </div>
 
           <div className={style.NavBarAndbuttons}>
-            <nav className={style.navBar}>
-              <ul className={style.list}>
-                <li className={style.item}>
-                  <Link to="/" className={style.navLink}>Головна</Link>
-                </li>
-                <li className={style.item}>
-                  <Link to="/locations" className={style.navLink}>Місця відпочинку</Link>
-                </li>
-                {isLoggedIn && (
-                  <li className={style.item}>
-                    <Link to={`/profile/${user?.id}`} className={style.navLink}>
-                      Мій профіль
-                    </Link>
-                  </li>
-                )}
-              </ul>
-            </nav>
-
-            <div className={style.desctopBtns} style={{ display: isLoggedIn ? "flex" : "flex" }}>
-              <button className={style.shareLoctionBtn} onClick={handleShareLocation}>
-                Поділитись локацією
-              </button>
-              <div className={style.UserAvatarAndName} onClick={openUserMenu}>
-                <img
-                  className={style.userAvatar}
-                  src={user?.avatar}
-                  alt="UserAvatar"
-                />
-                <p>{user?.name}</p>
-              </div>
-              <button className={style.logOutBtn}>
-                {" "}
-                <LogOut />
-              </button>
+            <NavBar/>
+            <div
+              className={style.desctopBtns}
+              style={{ display: isLoggedIn ? "none" : "flex" }}
+            >
+              <Button />
+            </div>
+            <div className={style.desctopBtns} style={{ display: isLoggedIn ? "flex" : "none" }}>
+              <Button/>
             </div>
 
             {isLoggedIn && (
@@ -103,9 +87,6 @@ export const Header = () => {
           </div>
 
           <div className={style.mobileNavBarAndButtons}>
-            <button className={style.burgerMenu} onClick={toggleBurger}>
-              <BuregerMenu className={style.burgerMenuIcon} />
-            </button>
               <button className={style.burgerMenu} onClick={openBurger}>
                 <BuregerMenu className={style.burgerMenuIcon} />
               </button>

@@ -137,7 +137,7 @@
   .burgerMobileBtns {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    -gap: 10px;
   }
 }
 
@@ -158,6 +158,9 @@
     right: -65px;
     width: 114px;
     padding: 10px 20px;
+  }
+  .burgerMobileBtns{
+    column-gap: 10px;
   }
 }
 
@@ -183,6 +186,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
 }
 @media (min-width: 375px) and (max-width: 768px){
     .mobileNavBarAndButtons{

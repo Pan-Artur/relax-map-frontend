@@ -110,7 +110,7 @@ export default function PopularLocationsBlock() {
               768: {
                 slidesPerView: 2,
               },
-              1024: {
+              1374: {
                 slidesPerView: 3,
               },
             }}
