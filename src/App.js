@@ -27,7 +27,7 @@ import { LocationFormPage } from "./features/locations/pages/LocationFormPage/Lo
 import { ProfilePage } from "./features/profile/ProfilePage.jsx";
 import { LoginPage } from "./features/auth/LoginPage.jsx";
 import { RegisterPage } from "./features/auth/RegisterPage.jsx";
-import { NotFoundPage } from "./ui/NotFoundPage.jsx";
+import { NotFoundPage } from "../src/ui/NotFoundPage/NotFoundPage.jsx";
 
 import { AddReviewModal } from "./features/locations/modals/AddReviewModal/AddReviewModal.jsx";
 
