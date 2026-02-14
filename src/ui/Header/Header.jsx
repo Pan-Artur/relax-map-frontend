@@ -11,6 +11,8 @@ import { ReactComponent as BuregerMenu } from "../../assets/icons/burger.svg";
 import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
 import { UserMenu } from "../UserMenu/UserMenu.jsx";
 import { Container } from "../../components/Container/Container.jsx";
+import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
+import { useEffect } from "react";
 export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenMenu, setOpenMenu] = useState(false);
@@ -26,6 +28,17 @@ export const Header = () => {
     setOpenMenu(!isOpenMenu);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
   return (
     <header className={style.header}>
       <Container>
@@ -59,7 +72,6 @@ export const Header = () => {
                 />
                 <p>{user?.name}</p>
               </div>
-              {isOpenMenu && <UserMenu />}
               <button className={style.logOutBtn}>
                 {" "}
                 <LogOut />
@@ -79,69 +91,10 @@ export const Header = () => {
             >
               Поділитись локацією
             </button>
-            <div className={style.mobileNavContainer}>
               <button className={style.burgerMenu} onClick={openBurger}>
                 <BuregerMenu className={style.burgerMenuIcon} />
               </button>
-
-              <ul
-                className={`${
-                  isOpen ? style.mobileList : style.burgerMenuDisable
-                }`}
-              >
-                <li className={style.mobileItem}>
-                  <Link to={"/"} className={style.mobileNavLink}>
-                    Головна
-                  </Link>
-                </li>
-                <li className={style.mobileItem}>
-                  <Link to={"/locations"} className={style.mobileNavLink}>
-                    Місця відпочинку
-                  </Link>
-                </li>
-                <li className={style.mobileItem}>
-                  <Link
-                    to={`/profile/${user?.id}`}
-                    className={style.mobileNavLink}
-                    style={{ display: isLoggedIn ? "flex" : "none" }}
-                  >
-                    Мій Профіль
-                  </Link>
-                </li>
-                <div
-                  className={style.UserAvatarAndName}
-                  onClick={openUserMenu}
-                  style={{ display: isLoggedIn ? "flex" : "none" }}
-                >
-                  <img
-                    className={style.userAvatar}
-                    src={user?.avatar}
-                    alt="UserAvatar"
-                  />
-                  <p>{user?.name}</p>
-                </div>
-                {isOpenMenu && <UserMenu />}
-                <button
-                  className={style.shareLoctionMobileBtn}
-                  style={{ display: isLoggedIn ? "flex" : "none" }}
-                >
-                  Поділитись локацією
-                </button>
-                <button
-                  className={style.logOutBtn}
-                  style={{ display: isLoggedIn ? "flex" : "none" }}
-                >
-                  {" "}
-                  <LogOut />
-                </button>
-                <div
-                  className={style.burgerMobileBtns}
-                  style={{ display: isLoggedIn ? "none" : "flex" }}
-                >
-                  <Button />
-                </div>
-              </ul>
-            </div>
+              <MenuHeader isOpen={isOpen} isLoggedIn={isLoggedIn} openUserMenu={openUserMenu} isOpenMenu={isOpenMenu} />
           </div>
         </div>
       </Container>

@@ -27,13 +27,6 @@
         width: 32px;
         height: 32px;
     }
-    .mobileList{
-        display: flex;
-        flex-direction: column;
-        row-gap: 10px;
-        list-style: none;
-        
-    }
     .mobileNavLink{
         text-decoration: none;
         color: black;
@@ -67,13 +60,14 @@
         position: absolute;
         display: flex;
         flex-direction: column;
-        top: 100%;
-        right: -40px;
-        row-gap: 10px;
-        list-style: none;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
         background: #FFF2EC;
-        padding: 20px;
         z-index: 10000;
+        row-gap: 32px;
     }
     .burgerMobileBtns{
         display: flex;
@@ -102,9 +96,13 @@
     .logOutBtn{
         width: 30px;
         height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background:none ;
         border: none;
         cursor: pointer;
+        border-left: 1px solid #00000026;
     }
     .shareLoctionMobileBtn{
         width: 125px;
@@ -120,7 +118,11 @@
         font-weight: 500;
         font-size: 10px;
     }
-
+    
+    .ContainerUser{
+        display: flex;
+        width: 110px;
+    }
 }
 @media  (min-width: 768px) and (max-width: 1374px)  {
     .burgerMenu{
@@ -155,32 +157,29 @@
     }
     .mobileList{
         position: absolute;
-        top: 122%;
-        right: -65px;
-        width: 114px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
         background: #FFF2EC;
-        border-radius: 6px;
-        padding: 10px,20px;
         z-index: 10000;
+        row-gap: 32px;
     }
     .NavBarAndbuttons{
         display: none;
     }
     .mobileNavBarAndButtons{
-        width: 234px;
+        width: 32px;
         height: 32px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     .mobileBtns{
-        display: flex;
-        width: 186px;
-        height: 32px;
-        justify-content: space-between;
-    }
-    .burgerMobileBtns{
-        display: none;
+        display: none !important;
     }
     .shareLoctionBtn{
         display: flex ; 
@@ -214,14 +213,22 @@
         cursor: pointer;
     }
     .logOutBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 30px;
         height: 30px;
         background:none ;
         border: none;
         cursor: pointer;
+        border-left: 1px solid #00000026;
     }
     .shareLoctionMobileBtn{
         display:none !important; 
+    }
+    .ContainerUser{
+        display: flex;
+        width: 110px;
     }
 }
 @media (min-width: 1374px) {

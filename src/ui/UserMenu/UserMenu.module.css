@@ -27,7 +27,6 @@
 }
 @media (min-width: 1024px) {
     .userList{
-        position: absolute; 
-        top: 9%;
+
     }
 }
