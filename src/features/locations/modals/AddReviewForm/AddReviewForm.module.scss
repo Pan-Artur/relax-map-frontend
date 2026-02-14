@@ -1,0 +1,122 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .subtitle {
+    display: flex;
+    margin: 0 0 8px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+  }
+
+  .textarea {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 12px;
+    width: 640px;
+    height: 180px;
+    background: #ffe5d9;
+    resize: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.6);
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #cc6534;
+      box-shadow: 0 0 0 2px rgba(204, 101, 52, 0.2);
+    }
+
+    &:hover {
+      border-color: rgba(204, 101, 52, 0.6);
+    }
+
+    &.textareaError {
+      background-color: #fdecea;
+      border: 1px solid #e74c3c;
+
+      &:focus {
+        border-color: #c0392b;
+        box-shadow: 0 0 4px rgba(231, 76, 60, 0.4);
+      }
+    }
+  }
+
+  .warning {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .counter {
+      display: flex;
+      margin: 4px 0 0 auto;
+      width: 60px;
+      text-align: right;
+      justify-content: right;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 12px;
+      min-height: 1em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .error {
+      color: #e74c3c;
+      margin-top: 4px;
+      margin-bottom: 0;
+      opacity: 0;
+      font-size: 13px;
+      min-height: 1em;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  .stars {
+    display: flex;
+  }
+
+  .actions {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+
+    .cancel {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      padding: 6px 12px;
+      width: 203px;
+      height: 48px;
+      background: rgba(0, 0, 0, 0.05);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: #4c2613;
+    }
+
+    .submit {
+      border: 1px solid #cc6534;
+      border-radius: 6px;
+      padding: 6px 12px;
+      width: 203px;
+      height: 48px;
+      background-color: #cc6534;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 150%;
+      color: #fff;
+    }
+  }
+}

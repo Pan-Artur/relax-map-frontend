@@ -40,6 +40,8 @@ export const api = {
   updateLocation: (id, data) => apiInstance.put(`/locations/${id}`, data),
   deleteLocation: (id) => apiInstance.delete(`/locations/${id}`),
 
+  getReviewsByLocation: (locationId) =>
+    apiInstance.get(`/locations/${locationId}/reviews`),
   addReview: (locationId, data) =>
     apiInstance.post(`/locations/${locationId}/reviews`, data),
   deleteReview: (id) => apiInstance.delete(`/reviews/${id}`),
