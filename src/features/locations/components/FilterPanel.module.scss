@@ -75,6 +75,14 @@
     line-height: 150%;
     color: #4c4c4c;
 
+    transition: 500ms;
+
+
+     &:focus,
+    &:hover {
+      outline: 1px solid #ffa57a;
+    }
+
     @media screen and (max-width: 1340px) {
       margin-bottom: 12px;
     }
@@ -175,7 +183,7 @@
     display: flex;
     justify-content: space-between;
 
-    &:focus,
+
     &:hover {
       outline: 1px solid #ffa57a;
     }
@@ -188,7 +196,11 @@
     }
 
     .filterPanelForm > .filterPanelDropdown > & {
+
+      @media screen and (max-width: 768px) {
       width: 100%;
+      }
+      
     }
   }
 }
