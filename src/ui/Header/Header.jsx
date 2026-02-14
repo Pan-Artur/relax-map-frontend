@@ -68,12 +68,8 @@ export const Header = () => {
             >
               <Button />
             </div>
-            <div className={style.desctopBtns} style={{ display: isLoggedIn ? "flex" : "none" }}>
-              <Button/>
-            </div>
 
-            {isLoggedIn && (
-              <div className={style.userInfo} onClick={toggleUserMenu}>
+              <div className={style.userInfo} onClick={toggleUserMenu} style={{display:isLoggedIn ? "flex": "none"}}>
                 <div className={style.UserAvatarAndName}>
                   <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
                   <p>{user?.name}</p>
@@ -83,7 +79,7 @@ export const Header = () => {
                   <LogOut />
                 </button>
               </div>
-            )}
+
           </div>
 
           <div className={style.mobileNavBarAndButtons}>
