@@ -6,13 +6,13 @@ import { Container } from "../../../../components/Container/Container";
 
 import { LocationInfoBlock } from "../../blocks/LocationInfoBlock/LocationInfoBlock";
 import { LocationGallery } from "../../blocks/LocationGallery/LocationGallery";
-import { LocationDescription } from "../../blocks/LocationDescription";
-import { ReviewsSection } from "../../components/ReviewsSection";
+import { LocationDescription } from "../../blocks/LocationDecription/LocationDescription";
+import { ReviewsSection } from "../../components/ReviewsSection/ReviewsSection";
 
-import style from "./LocationDetailsPage.module.css";
+import style from "./LocationDetailsPage.module.scss";
 
 export const LocationDetailsPage = () => {
-  const { locationId } = useParams();
+  const { id } = useParams();
 
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ export const LocationDetailsPage = () => {
   useEffect(() => {
     const fetchLocation = async () => {
       try {
-        const res = await api.getLocationById(locationId);
+        const res = await api.getLocationById(id);
 
         setLocation(res.data);
       } catch (error) {
@@ -32,7 +32,7 @@ export const LocationDetailsPage = () => {
     };
 
     fetchLocation();
-  }, [locationId]);
+  }, [id]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
@@ -43,7 +43,7 @@ export const LocationDetailsPage = () => {
       <div className={style.hero}>
         <Container>
           <LocationInfoBlock location={location} />
-          <LocationGallery images={location.images} />
+          <LocationGallery gallery={location.gallery} poster={location.poster} />
         </Container>
       </div>
       <LocationDescription description={location.description} />

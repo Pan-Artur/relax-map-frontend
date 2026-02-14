@@ -1,33 +1,34 @@
-.userList{
-    right: 74px; 
-    width: 120px;
-    z-index: 1000;
-    background: #FFF2EC;
+.userList {
+  right: 74px;
+  width: 120px;
+  z-index: 1000;
+  background: #fff2ec;
 }
-.userItem{
-    list-style: none;
-}
-.changeAvatar{
-    text-decoration: none;
-    color: black;
+.userItem {
+  list-style: none;
 }
 
-@media (min-width: 378px) and (max-width: 768px){
-    .userList{
-        display: block ;
-        padding: 0;
-    }
+.changeAvatar {
+  text-decoration: none;
+  color: black;
 }
 
-@media (min-width: 768px) and (max-width: 1024px){
-    .userList{
-        padding: 0 ;
-    }
-
+@media (min-width: 378px) and (max-width: 768px) {
+  .userList {
+    display: block;
+    padding: 0;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .userList {
+    padding: 0;
+  }
+}
+
 @media (min-width: 1024px) {
-    .userList{
-        position: absolute; 
-        top: 9%;
-    }
+  .userList {
+    position: absolute;
+    top: 9%;
+  }
 }

@@ -1,0 +1,8 @@
+.hero {
+  padding: 48px 0;
+
+  & > div {
+    display: flex;
+    gap: 24px;
+  }
+}
