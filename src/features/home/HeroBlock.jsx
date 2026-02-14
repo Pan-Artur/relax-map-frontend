@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HeroBlock.module.scss";
+import { Container } from '../../components/Container/Container';
 
 export function HeroBlock() {
     const [query, setQuery] = useState("");
@@ -30,7 +31,8 @@ export function HeroBlock() {
                     "url('https://image2url.com/r2/default/images/1769280502355-41660871-593c-4c8f-a255-694c4b9cfa5d.png')",
             }}
         >
-            <div className={styles.heroContent}>
+            <Container>
+                <div className={styles.heroContent}>
                 <h1>
                     Відкрий для себе Україну. Знайди ідеальне місце для відпочинку
                 </h1>
@@ -46,6 +48,8 @@ export function HeroBlock() {
                     <button>Знайти місце</button>
                 </div>
             </div>
+            </Container>
+            
         </section>
     );
 }
