@@ -6,7 +6,8 @@ const apiInstance = axios.create({
 });
 
 apiInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
+  const saved = localStorage.getItem("auth");
+  const token = saved ? JSON.parse(saved).token : null;
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -33,13 +34,16 @@ export const api = {
   getUserById: (id) => apiInstance.get(`/users/${id}`),
   getUserLocations: (id) => apiInstance.get(`/users/${id}/locations`),
 
-  getLocations: (params) => apiInstance.get("/locations", {params}),
+  getLocations: (params) => apiInstance.get("/locations", { params }),
   getLocationById: (id) => apiInstance.get(`/locations/${id}`),
   createLocation: (data) => apiInstance.post("/locations", data),
   updateLocation: (id, data) => apiInstance.put(`/locations/${id}`, data),
   deleteLocation: (id) => apiInstance.delete(`/locations/${id}`),
 
-  addReview: (locationId, data) => apiInstance.post(`/locations/${locationId}/reviews`, data),
+  getReviewsByLocation: (locationId) =>
+    apiInstance.get(`/locations/${locationId}/reviews`),
+  addReview: (locationId, data) =>
+    apiInstance.post(`/locations/${locationId}/reviews`, data),
   deleteReview: (id) => apiInstance.delete(`/reviews/${id}`),
 
   getCategories: () => apiInstance.get("/categories"),

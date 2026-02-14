@@ -1,15 +1,15 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
-import { login } from '../../app/store/authSlice.js';
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { login } from '../../app/store/authSlice.js'
 import style from './AuthForm.module.css'
 
 import { api } from '../../app/services/apiClient'
 
 // id = login or register. register default value
 export function AuthForm({ id = 'register' }) {
-	const dispatch = useDispatch();
-	const navigate = useNavigate();
+	const dispatch = useDispatch()
+	const navigate = useNavigate()
 
 	let errors = {
 		username: '',
@@ -104,30 +104,40 @@ export function AuthForm({ id = 'register' }) {
 			setErrorStyles(elements)
 
 			try {
-				const res = await api.register(authData);
+				const res = await api.register(authData)
 
-        localStorage.setItem("token", res.data.token);
+				localStorage.setItem(
+					'auth',
+					JSON.stringify({
+						user: res.data.user,
+						token: res.data.token,
+					}),
+				)
 
-        navigate(`/profile/${res.data.user.id}`);
+				navigate(`/profile/${res.data.user.id}`)
 			} catch (error) {
 				console.log(`error while registration ${error}`)
 			}
 		} else {
 			try {
-				const res = await api.login(authData);
+				const res = await api.login(authData)
 
-				dispatch(login(res.data));
+				dispatch(login(res.data))
 
-        localStorage.setItem("token", res.data.token);
+				localStorage.setItem(
+					'auth',
+					JSON.stringify({
+						user: res.data.user,
+						token: res.data.token,
+					}),
+				)
 
-        navigate(`/profile/${res.data.user.id}`);
+				navigate(`/profile/${res.data.user.id}`)
 			} catch (error) {
 				console.log(`error while logging in: ${error}`)
 			}
 		}
 	}
-
-	//TODO: finish auth logic (api is broken rn)
 
 	return (
 		<div className={style.box}>

@@ -1,16 +1,19 @@
 .container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  margin: 0 auto;
+  padding: 0 16px;
+  
   max-width: 335px;
 
-  @media screen and (min-width: 736px) {
-    max-width: 704px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 766px) {
+    max-width: 734px;
   }
 
-  @media screen and (min-width: 1344px) {
-    max-width: 1312px;
+  @media screen and (min-width: 1374px) {
+    max-width: 1342px;
   }
 }

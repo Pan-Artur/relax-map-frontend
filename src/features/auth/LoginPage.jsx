@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AuthForm } from "../../components/AuthForm/AuthForm";
 import { AuthNav } from "../../components/AuthNav/AuthNav";
-import { Logo } from "../../ui/Logo";
+import { Logo } from "../../ui/Logo/Logo";
 import style from "./AuthPage.module.css";
 
 export const LoginPage = () => {

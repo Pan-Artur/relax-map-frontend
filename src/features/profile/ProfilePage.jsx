@@ -1,17 +1,42 @@
-import style from './ProfilePage.module.css'
-import { ProfileInfo } from '../../components/ProfileInfo/ProfileInfo'
-import { ProfilePlaceholder } from '../../components/ProfilePlaceholder/ProfilePlaceholder'
+import { useEffect, useState } from "react";
+import { useParams, Navigate } from "react-router-dom";
+
+import { api } from "../../app/services/apiClient";
+
+import { ProfileInfo } from "../../components/ProfileInfo/ProfileInfo";
+import { ProfilePlaceholder } from "../../components/ProfilePlaceholder/ProfilePlaceholder";
+
+import style from "./ProfilePage.module.css";
 
 export const ProfilePage = () => {
-	// TODO: articlesAmount logic
+  const { id } = useParams();
+  const [userInfo, setUserInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-	const articlesAmount = 0
+  useEffect(() => {
+    if (!id) return;
 
-	return (
-		<div className={style.container}>
-			<ProfileInfo />
+    api
+      .getUserById(id)
+      .then((res) => setUserInfo(res.data))
+      .catch((error) => {
+        console.error(error);
+        setUserInfo(null);
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
 
-			{articlesAmount === 0 ? <ProfilePlaceholder /> : null}
-		</div>
-	)
-}
+  if (!id) return <Navigate to="/" />;
+  if (loading) return <div>Loading profile...</div>;
+  if (!userInfo) return <div>User not found</div>;
+
+  // TODO: locations grid
+
+  return (
+    <div className={style.container}>
+      <ProfileInfo userId={id} user={userInfo} />
+
+      {userInfo.locationsCount === 0 && <ProfilePlaceholder userId={id} />}
+    </div>
+  );
+};
