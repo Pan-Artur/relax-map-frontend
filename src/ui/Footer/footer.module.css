@@ -119,6 +119,7 @@
 @media (min-width: 1374px) {
     .footer{
         height: 283px;
+        position: absolute;
     }
     .topFooterContainer{
         height: 67px;
@@ -132,6 +133,8 @@
 
     }
     .socialContainer{
+        position: relative;
+        left: 58px;
         width: 132px;
         height: 24px;
     }

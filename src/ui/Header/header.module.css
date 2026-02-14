@@ -137,7 +137,7 @@
   .burgerMobileBtns {
     display: flex;
     flex-direction: column;
-    -gap: 10px;
+    column-gap: 10px;
   }
 }
 
@@ -183,9 +183,14 @@
   }
 
   .userInfo {
+    width: 113px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .userAvatar{
+    width: 32px;
+    height: 32px;
   }
 }
 @media (min-width: 375px) and (max-width: 768px){
