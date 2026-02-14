@@ -19,7 +19,7 @@
 .heroContent {
     position: relative;
     width: 100%;
-    padding: 24px 16px;
+    // padding: 24px 16px;
     color: #fff;
 
 
@@ -68,8 +68,8 @@
 
 @media (min-width: 1200px) {
     .heroContent {
-        max-width: 720px;
-        margin-left: 80px;
+        // max-width: 720px;
+        // margin-left: 80px;
 
 
         h1 {
@@ -85,18 +85,18 @@
 
 @media (min-width: 768px) {
     .heroContent {
-        max-width: 640px;
+        // max-width: 640px;
         padding: 32px 40px;
 
 
         h1 {
             font-size: 60px;
-            width: 1312px;
+            width: 100%;
         }
 
 
         p {
-            width: 1312px;
+            width: 100%;
         }
     }
 }
@@ -107,6 +107,7 @@
 
 
     input {
+        max-width: 640px;
         border-radius: 10px;
         font-size: 15px;
     }
