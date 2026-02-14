@@ -62,18 +62,18 @@
 .review-card {
   flex-shrink: 0;
   width: 300px;
-  max-width: 320px;
+  width: 320px;
   background: #fde7db;
   border-radius: 20px;
   padding: 16px;
 
   @media (min-width: 768px) {
-    max-width: 340px;
+    width: 340px;
     padding: 20px;
   }
 
   @media (min-width: 1200px) {
-    max-width: 421px;
+    width: 421px;
   }
 
   &__rating {

@@ -9,7 +9,7 @@ export const LocationsCard = ({ place, image, rating, title }) => {
 
 	return (
 		<>
-			<div className={styles.locationsCardImg}></div>
+			<img className={styles.locationsCardImg} src={image} alt="" />
 			<div className={styles.locationsCardBox}>
 				<p className={styles.locationsCardText}>{place}</p>
 				<ul className={styles.locationsCardList}>

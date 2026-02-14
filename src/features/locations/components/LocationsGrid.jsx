@@ -49,7 +49,7 @@ export const LocationsGrid = ({ id }) => {
 					<li className={styles.locationsGridCard} key={location.id}>
 						<LocationsCard
 							place={location.place}
-							img={location.poster}
+							image={location.image}
 							rating={location.rate}
 							title={location.title}
 						/>
