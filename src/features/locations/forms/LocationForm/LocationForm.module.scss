@@ -7,6 +7,14 @@
   padding: 48px 0;
 }
 
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #1b391b;
+  margin-bottom: 8px;
+}
+
 .gallery {
   .field {
     margin-bottom: 24px;
@@ -18,19 +26,19 @@
       object-fit: cover;
       object-position: center;
     }
-
-    .fieldButton {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 150%;
-      color: #4c2613;
-      height: 38px;
-      padding: 4px 10px;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: 6px;
-    }
   }
+}
+
+.fieldButton {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #4c2613;
 }
 
 .list {
