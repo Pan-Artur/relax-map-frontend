@@ -1,0 +1,139 @@
+.title {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 110%;
+  letter-spacing: -0.01em;
+  color: #1b391b;
+  padding: 48px 0;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #1b391b;
+  margin-bottom: 8px;
+}
+
+.gallery {
+  .field {
+    margin-bottom: 24px;
+
+    .fieldImage {
+      border-radius: 12px;
+      width: 1091px;
+      height: 726px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.fieldButton {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px 0 60px;
+
+  .item {
+    .subtitle {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #1b391b;
+      margin-bottom: 8px;
+    }
+
+    .input {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      padding: 8px;
+      width: 1089px;
+      height: 43px;
+      background-color: #ffe5d9;
+      color: #4c2613;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      &:focus,
+      &:hover {
+        outline: none;
+        border-color: #cc6534;
+        box-shadow: 0 0 0 2px rgba(204, 101, 52, 0.2);
+      }
+    }
+
+    .details {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      padding: 12px;
+      width: 1091px;
+      min-height: 180px;
+      background: #ffe5d9;
+      font-size: 18px;
+      line-height: 150%;
+      color: #4c2613;
+      resize: none;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      &:focus,
+      &:hover {
+        outline: none;
+        border-color: #cc6534;
+        box-shadow: 0 0 0 2px rgba(204, 101, 52, 0.2);
+      }
+    }
+  }
+}
+
+.couple {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 72px;
+
+  .submitButton {
+    border: 1px solid #cc6534;
+    border-radius: 6px;
+    padding: 6px 12px;
+    width: 203px;
+    height: 48px;
+    background-color: #cc6534;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #fff;
+  }
+
+  .cancelButton {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 6px 12px;
+    width: 203px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #4c2613;
+  }
+}

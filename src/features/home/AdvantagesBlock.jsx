@@ -32,6 +32,7 @@ export function AdvantagesBlock() {
 
     return (
         <section className={styles.advantages}>
+              <div className={styles.container}>
             <h2 className={styles.advantagesTitle}>Ключові переваги</h2>
 
             <div className={styles.advantagesGrid}>
@@ -56,6 +57,7 @@ export function AdvantagesBlock() {
                         Додавайте власні улюблені місця та діліться своїми неймовірними знахідками.
                     </p>
                 </div>
+            </div>
             </div>
         </section>
 

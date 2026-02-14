@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 
 import style from "./header.module.css";
@@ -14,18 +14,22 @@ import { Container } from "../../components/Container/Container.jsx";
 import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
 import { useEffect } from "react";
 export const Header = () => {
-  const [isOpen, setOpen] = useState(false);
-  const [isOpenMenu, setOpenMenu] = useState(false);
+  const [isOpenBurger, setOpenBurger] = useState(false);
+  const [isOpenUserMenu, setOpenUserMenu] = useState(false);
 
+  const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
 
-  const openBurger = () => {
-    setOpen(!isOpen);
-  };
+  const toggleBurger = () => setOpenBurger(!isOpenBurger);
+  const toggleUserMenu = () => setOpenUserMenu(!isOpenUserMenu);
 
-  const openUserMenu = () => {
-    setOpenMenu(!isOpenMenu);
+  const handleShareLocation = () => {
+    if (isLoggedIn) {
+      navigate("/locations/add");
+    } else {
+      navigate("/auth/login");
+    }
   };
 
   useEffect(() => {
@@ -46,22 +50,28 @@ export const Header = () => {
           <div className={style.logoContainer}>
             <Logo />
           </div>
+
           <div className={style.NavBarAndbuttons}>
-            <NavBar />
-            <div
-              className={style.desctopBtns}
-              style={{ display: isLoggedIn ? "none" : "flex" }}
-            >
-              <Button />
-            </div>
-            <div
-              className={style.userInfo}
-              style={{ display: isLoggedIn ? "flex" : "none" }}
-            >
-              <button
-                className={style.shareLoctionBtn}
-                style={{ display: isLoggedIn ? "flex" : "none" }}
-              >
+            <nav className={style.navBar}>
+              <ul className={style.list}>
+                <li className={style.item}>
+                  <Link to="/" className={style.navLink}>Головна</Link>
+                </li>
+                <li className={style.item}>
+                  <Link to="/locations" className={style.navLink}>Місця відпочинку</Link>
+                </li>
+                {isLoggedIn && (
+                  <li className={style.item}>
+                    <Link to={`/profile/${user?.id}`} className={style.navLink}>
+                      Мій профіль
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </nav>
+
+            <div className={style.desctopBtns} style={{ display: isLoggedIn ? "flex" : "flex" }}>
+              <button className={style.shareLoctionBtn} onClick={handleShareLocation}>
                 Поділитись локацією
               </button>
               <div className={style.UserAvatarAndName} onClick={openUserMenu}>
@@ -77,19 +87,24 @@ export const Header = () => {
                 <LogOut />
               </button>
             </div>
+
+            {isLoggedIn && (
+              <div className={style.userInfo} onClick={toggleUserMenu}>
+                <div className={style.UserAvatarAndName}>
+                  <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
+                  <p>{user?.name}</p>
+                </div>
+                {isOpenUserMenu && <UserMenu />}
+                <button className={style.logOutBtn}>
+                  <LogOut />
+                </button>
+              </div>
+            )}
           </div>
+
           <div className={style.mobileNavBarAndButtons}>
-            <div
-              className={style.mobileBtns}
-              style={{ display: isLoggedIn ? "none" : "flex" }}
-            >
-              <Button />
-            </div>
-            <button
-              className={style.shareLoctionBtn}
-              style={{ display: isLoggedIn ? "flex" : "none" }}
-            >
-              Поділитись локацією
+            <button className={style.burgerMenu} onClick={toggleBurger}>
+              <BuregerMenu className={style.burgerMenuIcon} />
             </button>
               <button className={style.burgerMenu} onClick={openBurger}>
                 <BuregerMenu className={style.burgerMenuIcon} />

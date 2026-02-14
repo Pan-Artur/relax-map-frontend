@@ -1,6 +1,12 @@
-import { useEffect } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import { loadFromLocalStorage } from "./app/store/authSlice.js";
 import {
@@ -8,6 +14,10 @@ import {
   selectUser,
   selectInitialized,
 } from "./app/store/authSelectors.js";
+
+import { ToastProvider } from "./components/ToastProvider/ToastProvider.jsx";
+
+import { ModalWrapper } from "./ui/ModalWrapper/ModalWrapper.jsx";
 
 import { MainLayout } from "./app/MainLayout.jsx";
 import { HomePage } from "./features/home/HomePage.jsx";
@@ -19,23 +29,29 @@ import { LoginPage } from "./features/auth/LoginPage.jsx";
 import { RegisterPage } from "./features/auth/RegisterPage.jsx";
 import { NotFoundPage } from "../src/ui/NotFoundPage/NotFoundPage.jsx";
 
+import { AddReviewModal } from "./features/locations/modals/AddReviewModal/AddReviewModal.jsx";
+
 const App = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const state = location.state;
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
   const initialized = useSelector(selectInitialized);
 
-	useEffect(() => {
-		dispatch(loadFromLocalStorage())
-	}, [dispatch])
+  useEffect(() => {
+    dispatch(loadFromLocalStorage());
+  }, [dispatch]);
 
   if (!initialized) {
     return <div>Loading auth...</div>;
   }
 
   return (
-    <>
-      <Routes>
+    <ToastProvider>
+      <Routes location={state?.background || location}>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="locations" element={<LocationsPage />} />
@@ -73,7 +89,19 @@ const App = () => {
           element={!isLoggedIn ? <RegisterPage /> : <Navigate to="/" />}
         />
       </Routes>
-    </>
+      {state?.background && (
+        <Routes>
+          <Route
+            path="locations/:id/add-review"
+            element={
+              <ModalWrapper onClose={() => navigate(-1)}>
+                <AddReviewModal />
+              </ModalWrapper>
+            }
+          />
+        </Routes>
+      )}
+    </ToastProvider>
   );
 };
 

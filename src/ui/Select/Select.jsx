@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-import style from "./Select.module.css";
+import style from "./Select.module.scss";
 
 export const Select = ({ placeholder, options, value, onChange }) => {
   const [open, setOpen] = useState(false);

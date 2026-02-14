@@ -1,25 +1,187 @@
-.header{
-    width: 100%;
-    height: 72px;
-    background: #FFF2EC;
+.header {
+  width: 100%;
+  height: 72px;
+  background: #fff2ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  width: 121px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+}
+
+.NavBarAndbuttons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navBar ul {
+  display: flex;
+  gap: 32px;
+}
+
+.navBar li,
+.mobileItem {
+  margin: 0;
+}
+
+.navLink {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
+}
+
+.navLink,
+.mobileNavLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.shareLoctionBtn,
+.shareLoctionMobileBtn {
+  border: 1px solid #cc6534;
+  border-radius: 6px;
+  height: 38px;
+  background: #cc6534;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #FFFFFF;
+
+}
+
+.shareLoctionBtn {
+  height: 32px;
+  font-size: 16px;
+  padding: 0 16px;
+}
+
+.shareLoctionMobileBtn {
+  height: 38px;
+  font-size: 10px;
+}
+
+.UserAvatarAndName {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+}
+
+.userAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logOutBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .NavBarAndbuttons,
+  .desctopBtns {
+    display: none;
+  }
+
+  .mobileNavBarAndButtons {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .burgerMenu {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #00000015;
+    border-radius: 6px;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+  }
+
+  .mobileList {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background: #fff2ec;
+    padding: 20px;
+    border-radius: 6px;
+    z-index: 10000;
+  }
+
+  .burgerMenuDisable {
+    display: none;
+  }
+
+  .mobileBtns,
+  .burgerMobileBtns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
 }
-.backgroundContainer{
-    width: 100%;
+
+@media (min-width: 769px) and (max-width: 1374px) {
+  .NavBarAndbuttons {
+    display: none;
+  }
+
+  .mobileNavBarAndButtons {
     display: flex;
     justify-content: space-between;
-}
-.logoContainer{
-    width: 121px;
-    height: 29px;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    width: 234px;
+  }
+
+  .mobileList {
+    top: 122%;
+    right: -65px;
+    width: 114px;
+    padding: 10px 20px;
+  }
 }
-.NavBarAndbuttons{
+
+@media (min-width: 1375px) {
+  .NavBarAndbuttons {
     display: flex;
+    justify-content: flex-end;
+    column-gap: 32px;
+  }
+
+  .mobileNavBarAndButtons,
+  .burgerMenu,
+  .mobileList {
+    display: none;
+  }
+
+  .desctopBtns {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  .userInfo {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 @media (min-width: 375px) and (max-width: 768px){
@@ -229,82 +391,5 @@
     .ContainerUser{
         display: flex;
         width: 110px;
-    }
-}
-@media (min-width: 1374px) {
-    .NavBarAndbuttons{
-        display: flex;
-        width: 830px;
-        height: 38px;
-        align-items: center;
-        justify-content: flex-end;
-        column-gap: 32px;
-    }
-    .burgerMenu{
-        display: none;
-    }
-    .mobileItem{
-        list-style: none;
-    }
-    .mobileNavLink{
-        text-decoration: none;
-    }
-    .mobileNavContainer{
-        display: none;
-    }
-    .mobileNavBarAndButtons{
-        display: none;
-    }
-    .btns{
-        display: flex;
-        column-gap: 16px;
-    }
-    .desctopBtns{
-        display: flex;
-        column-gap: 16px;
-    }
-    .userInfo{
-        width: 375px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }   
-    .shareLoctionBtn{
-        width: 245px;
-        height: 38px;
-        justify-content: center;
-        align-items: center;
-        background: #CC6534;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-    }
-    .UserAvatarAndName{
-        display: flex;
-        position: relative;
-        width: 79px;
-        height: 32px;
-        align-items: center;
-        column-gap: 8px;
-        border-right: 1px solid #00000026;
-        padding-right: 3px;
-        cursor: pointer;
-    }
-    .userAvatar{
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        
-    }
-    .logOutBtn{
-        width: 24px;
-        height: 24px;
-        background:none ;
-        border: none;
-        cursor: pointer;
     }
 }
