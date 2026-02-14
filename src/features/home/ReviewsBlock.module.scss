@@ -45,6 +45,7 @@
 
   &__track {
     display: flex;
+    
     gap: 16px;
     transition: transform 0.4s ease;
     padding-bottom: 25px;
@@ -56,29 +57,11 @@
   }
 }
 
-.container {
-  width: 100%;
-  padding: 0 16px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    max-width: 720px;
-    padding: 0 24px;
-  }
-
-  @media (min-width: 1024px) {
-    max-width: 960px;
-  }
-
-  @media (min-width: 1200px) {
-    max-width: 1140px;
-  }
-}
 
 
 .review-card {
   flex-shrink: 0;
-  width: 100%;
+  width: 300px;
   max-width: 320px;
   background: #fde7db;
   border-radius: 20px;
@@ -90,7 +73,7 @@
   }
 
   @media (min-width: 1200px) {
-    max-width: 360px;
+    max-width: 421px;
   }
 
   &__rating {
