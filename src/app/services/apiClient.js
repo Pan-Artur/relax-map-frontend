@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiInstance = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://relaxmap-backend.onrender.com/",
   headers: { "Content-Type": "application/json" },
 });
 
