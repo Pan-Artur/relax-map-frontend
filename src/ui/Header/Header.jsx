@@ -11,7 +11,8 @@ import { ReactComponent as BuregerMenu } from "../../assets/icons/burger.svg";
 import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
 import { UserMenu } from "../UserMenu/UserMenu.jsx";
 import { Container } from "../../components/Container/Container.jsx";
-
+import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
+import { useEffect } from "react";
 export const Header = () => {
   const [isOpenBurger, setOpenBurger] = useState(false);
   const [isOpenUserMenu, setOpenUserMenu] = useState(false);
@@ -31,6 +32,17 @@ export const Header = () => {
     }
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
   return (
     <header className={style.header}>
       <Container>
@@ -62,6 +74,18 @@ export const Header = () => {
               <button className={style.shareLoctionBtn} onClick={handleShareLocation}>
                 Поділитись локацією
               </button>
+              <div className={style.UserAvatarAndName} onClick={openUserMenu}>
+                <img
+                  className={style.userAvatar}
+                  src={user?.avatar}
+                  alt="UserAvatar"
+                />
+                <p>{user?.name}</p>
+              </div>
+              <button className={style.logOutBtn}>
+                {" "}
+                <LogOut />
+              </button>
             </div>
 
             {isLoggedIn && (
@@ -82,37 +106,10 @@ export const Header = () => {
             <button className={style.burgerMenu} onClick={toggleBurger}>
               <BuregerMenu className={style.burgerMenuIcon} />
             </button>
-
-            <ul className={`${isOpenBurger ? style.mobileList : style.burgerMenuDisable}`}>
-              <li className={style.mobileItem}>
-                <Link to="/" className={style.mobileNavLink}>Головна</Link>
-              </li>
-              <li className={style.mobileItem}>
-                <Link to="/locations" className={style.mobileNavLink}>Місця відпочинку</Link>
-              </li>
-              {isLoggedIn && (
-                <li className={style.mobileItem}>
-                  <Link to={`/profile/${user?.id}`} className={style.mobileNavLink}>Мій профіль</Link>
-                </li>
-              )}
-              <li className={style.mobileItem}>
-                <button className={style.shareLoctionMobileBtn} onClick={handleShareLocation}>
-                  Поділитись локацією
-                </button>
-              </li>
-              {isLoggedIn && (
-                <li className={style.mobileItem}>
-                  <div className={style.UserAvatarAndName} onClick={toggleUserMenu}>
-                    <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
-                    <p>{user?.name}</p>
-                  </div>
-                  {isOpenUserMenu && <UserMenu />}
-                  <button className={style.logOutBtn}>
-                    <LogOut />
-                  </button>
-                </li>
-              )}
-            </ul>
+              <button className={style.burgerMenu} onClick={openBurger}>
+                <BuregerMenu className={style.burgerMenuIcon} />
+              </button>
+              <MenuHeader isOpen={isOpen} isLoggedIn={isLoggedIn} openUserMenu={openUserMenu} isOpenMenu={isOpenMenu} />
           </div>
         </div>
       </Container>
