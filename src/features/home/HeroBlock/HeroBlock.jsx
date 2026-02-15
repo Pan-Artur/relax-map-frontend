@@ -33,23 +33,24 @@ export function HeroBlock() {
             }}
         >
             <Container>
-            <div className={styles.heroContent}>
                 <div className={styles.heroContent}>
-                <h1>
-                    Відкрий для себе Україну. Знайди ідеальне місце для відпочинку
-                </h1>
-                <p>
-                    Тисячі перевірених локацій з реальними фото та відгуками від мандрівників
-                </p>
+                    <div className={styles.heroContent}>
+                        <h1>
+                            Відкрий для себе Україну. Знайди ідеальне місце для відпочинку
+                        </h1>
+                        <p>
+                            Тисячі перевірених локацій з реальними фото та відгуками від мандрівників
+                        </p>
 
-                <div className={styles.searchBox}>
-                    <input
-                        type="text"
-                        placeholder="Введіть назву, тип або регіон..."
-                    />
-                    <button>Знайти місце</button>
+                        <div className={styles.searchBox}>
+                            <input
+                                type="text"
+                                placeholder="Введіть назву, тип або регіон..."
+                            />
+                            <button>Знайти місце</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </Container>
         </section>
     );
