@@ -10,7 +10,6 @@ export const FilterPanel = ({
   selectedRegion,
   setSelectedRegion,
   selectedPlaces,
-  setSelectedPlaces,
   selectedSort,
   setSelectedSort,
   togglePlace,
@@ -36,6 +35,7 @@ export const FilterPanel = ({
               type="text"
               placeholder="Пошук"
               name="filterInput"
+              value={inputData}
               onChange={(e) => setInputData(e.target.value)}
             />
 

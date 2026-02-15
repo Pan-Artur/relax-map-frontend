@@ -40,7 +40,7 @@
 .searchBox {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
     margin-top: 20px;
 
 
@@ -67,13 +67,15 @@
 }
 
 @media (min-width: 1200px) {
+    
     .heroContent {
         // max-width: 720px;
         // margin-left: 80px;
 
 
         h1 {
-            font-size: 42px;
+                        font-size: 60px;
+
         }
 
 
@@ -83,16 +85,39 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    .searchBox {
+        flex-direction: column;
+    
+
+
+    input {
+        width: 100%;
+        
+        
+    }
+    h1 {
+        font-size: 42px;
+
+    }
+
+    button {
+        width: 100%;
+        border-radius: 10px;
+        padding: 14px 22px;
+        margin-left: 10px;
+    }
+}
     .heroContent {
         // max-width: 640px;
-        padding: 32px 40px;
+        padding: 32px 0;
 
 
         h1 {
             // width: 900px;
             // font-size: 40px;
-            font-size: 60px;
+            
+
             width: 100%;
         }
 
@@ -106,20 +131,22 @@
 
 .searchBox {
     flex-direction: row;
-    gap: 0;
+    gap: 16px;
+    
 
 
     input {
-        max-width: 640px;
+        max-width: 331px;
         border-radius: 10px;
         font-size: 15px;
     }
 
 
     button {
-        // width: 165px;
+        width: 165px;
+
         border-radius: 10px;
         padding: 14px 22px;
-        margin-left: 10px;
+        
     }
 }
