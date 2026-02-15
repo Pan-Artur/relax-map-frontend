@@ -49,6 +49,7 @@ export function HeroBlock() {
                     />
                     <button>Знайти місце</button>
                 </div>
+                </div>
             </div>
             </Container>
         </section>
