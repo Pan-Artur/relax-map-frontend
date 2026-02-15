@@ -1,24 +1,24 @@
 .header {
-  width: 100%;
-  height: 72px;
-  background: #fff2ec;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 100%;
+	height: 72px;
+	background: #fff2ec;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .backgroundContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .logoContainer {
-  width: 121px;
-  height: 29px;
-  display: flex;
-  align-items: center;
+	width: 121px;
+	height: 29px;
+	display: flex;
+	align-items: center;
 }
 
 .NavBarAndbuttons {
@@ -28,27 +28,27 @@
 }
 
 .navBar ul {
-  display: flex;
-  gap: 32px;
+	display: flex;
+	gap: 32px;
 }
 
 .navBar li,
 .mobileItem {
-  margin: 0;
+	margin: 0;
 }
 
 .navLink {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  color: #4c2613;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 150%;
+	color: #4c2613;
 }
 
 .navLink,
 .mobileNavLink {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
 }
 
 .shareLoctionBtn,
@@ -71,29 +71,27 @@
 }
 
 .shareLoctionMobileBtn {
-  height: 38px;
-  font-size: 10px;
+	height: 38px;
+	font-size: 10px;
 }
 
 .UserAvatarAndName {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+	cursor: pointer;
 }
 
 .userAvatar {
-  border-radius: 50%;
-  object-fit: cover;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .logOutBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
-
-
 
 @media (min-width: 375px) and (max-width: 768px){
     .mobileNavBarAndButtons{
@@ -301,7 +299,6 @@
         display: flex;
         width: 110px;
     }
-}
 
 @media (min-width: 1375px) {
   .NavBarAndbuttons {
@@ -347,3 +344,146 @@
 
 }
 
+  
+  .backdrop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.25);
+	z-index: 10;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.isHidden {
+	display: none;
+}
+
+.modal {
+	padding: 64px 20px;
+	background: #fff2ec;
+	border-radius: 24px;
+	position: relative;
+	max-width: 334px;
+
+	@media screen and (min-width: 768px) {
+		padding: 64px 32px;
+		max-width: 704px;
+	}
+
+	@media screen and (min-width: 1376px) {
+		padding: 64px;
+		max-width: 768px;
+	}
+}
+
+.modalCloseButton {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all 300ms ease-in-out;
+}
+
+.modalCloseButton:hover {
+	transform: scale(1.2);
+}
+
+.modalTitle {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 57px;
+	letter-spacing: -0.48px;
+	text-align: center;
+	color: #000000;
+}
+
+.modalText {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 30px;
+	text-align: center;
+	color: #000000;
+
+	margin-top: 5px;
+}
+
+.modalList {
+	display: flex;
+	gap: 24px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 32px;
+
+	flex-direction: column;
+
+	@media screen and (min-width: 768px) {
+		flex-direction: row;
+	}
+}
+
+.modalItem {
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+		max-width: 203px;
+	}
+}
+
+.modalButton {
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+
+	transition: all 250ms ease-in-out;
+
+	width: 100%;
+
+	@media screen and (min-width: 768px) {
+		max-width: 203px;
+	}
+}
+
+.modalButton:hover {
+	transform: scale(0.9);
+}
+
+.modalButtonCancel {
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	color: #4c2613;
+}
+
+.modalButtonCancel:hover {
+	background: #cc6534;
+	border: 1px solid #cc6534;
+	color: #ffffff;
+}
+
+.modalButtonExit {
+	background: #cc6534;
+	border: 1px solid #cc6534;
+	color: #ffffff;
+}
+
+.modalButtonExit:hover {
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #4c2613;
+  }

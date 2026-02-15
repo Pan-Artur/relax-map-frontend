@@ -3,7 +3,7 @@ import style from './ProfilePlaceholder.module.css'
 import { Link, useParams } from 'react-router-dom'
 import { api } from '../../app/services/apiClient'
 import { Container } from '../Container/Container'
-import { useSelector } from 'react-redux'	
+import { useSelector } from 'react-redux'
 import { selectUser } from '../../app/store/authSelectors'
 
 export function ProfilePlaceholder({ userId }) {

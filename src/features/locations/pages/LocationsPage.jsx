@@ -1,10 +1,11 @@
 import { FilterPanel } from "../components/FilterPanel";
 import styles from "../components/FilterPanel.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { api } from "../../../app/services/apiClient";
 
 import { LocationsGrid } from "../components/LocationsGrid";
 
-export const LocationsPage = () => {
+export const LocationsPage = ({id}) => {
   const regions = [
     { id: "", label: "Вся Україна" },
     { id: "kyivska", label: "Київська " },
@@ -43,87 +44,30 @@ export const LocationsPage = () => {
 
   const sortOptions = [
     { id: "popular", label: "За популярністю" },
-    { id: "highRated", label: "За рейтингом" },
     { id: "new", label: "Новіші спочатку" },
   ];
 
-  const locationsData = [
-    {
-      id: 1,
-      rate: 5,
-      title: "Києво-печерська лавра",
-      region: "kyivska",
-      author: "Dima Vakhmianin",
-      poster: "",
-      place: "Іст. пам'ятка",
-
-      placeId: "monument",
-
-      description:
-        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
-      reviews: [],
-    },
-    {
-      id: 2,
-
-      rate: 5,
-      title: "Києво-печерська лавра",
-      region: "kyivska",
-      author: "Dima Vakhmianin",
-      poster: "",
-      place: "Іст. пам'ятка",
-      placeId: "monument",
-
-      description:
-        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
-      reviews: [],
-    },
-    {
-      id: 3,
-
-      rate: 5,
-      title: "Києво-печерська лавра",
-      region: "kyivska",
-      author: "Dima Vakhmianin",
-      poster: "",
-      place: "Іст. пам'ятка",
-      placeId: "monument",
-
-      description:
-        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
-      reviews: [],
-    },
-    {
-      id: 5,
-
-      rate: 2,
-      title: "Poltava bum bum ",
-      region: "poltavska",
-      author: "Dima Vakhmianin",
-      poster: "",
-      place: "Іст. пам'ятка",
-      placeId: "monument",
-
-      description:
-        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
-      reviews: [],
-    },
-    {
-      id: 4,
-
-      rate: 5,
-      title: "Києво-печерська лавра",
-      region: "kyivska",
-      author: "Dima Vakhmianin",
-      poster: "",
-      place: "Іст. пам'ятка",
-      placeId: "monument",
-
-      description:
-        "Ки́єво-Пече́рська ла́вра — київський православний монастирський комплекс. Один із найбільших християнських центрів України, визначна пам'ятка історії та архітектури. Києво-Печерська лавра належить державі, а релігійні організації користуються нею на правах оренди[2].Заснована 1051 року як печерний монастир за межами Києва. Лавра отримала свою назву від печер, де оселилися її перші мешканці[3].",
-      reviews: [],
-    },
-  ];
+  const [locationsData, setLocationsData] = useState([]);
+  
+   
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          if (id) {
+            const data = await api.getUserLocations(id);
+            setLocationsData(data.data);
+            
+          } else {
+            const data = await api.getLocations();
+            setLocationsData(data.data.items);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+  
+      fetchData();
+    }, [id]);
 
   const [selectedRegion, setSelectedRegion] = useState({
     id: "",
@@ -146,24 +90,24 @@ export const LocationsPage = () => {
     }
   };
 
-  const selectedIds = selectedPlaces.map((p) => p.id);
+  const selectedIds = selectedPlaces.map((p) => p.label);
   const filteredData = locationsData
     .filter(
       (location) =>
-        selectedRegion.id === "" || location.region === selectedRegion.id,
+        selectedRegion.id === "" || location.region === `${selectedRegion.label}область`,
     )
     .filter(
       (location) =>
-        selectedIds.length === 0 || selectedIds.includes(location.placeId),
+        selectedIds.length === 0 || selectedIds.includes(location.place),
     )
     .filter(
-      (location) => inputData === "" || location.title.includes(inputData),
+      (location) => inputData === "" || location.title.toLowerCase().includes(inputData.toLowerCase()),
     );
   if (selectedSort.id === "") {
   } else if (selectedSort.id === "popular") {
     filteredData.sort((a, b) => b.rate - a.rate);
   }
-
+  console.log(filteredData)
   return (
     <>
       <h2 className={styles.title}>Усі місця відпочинку</h2>
