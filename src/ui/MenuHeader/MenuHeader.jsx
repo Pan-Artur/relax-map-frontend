@@ -2,7 +2,6 @@ import style from "../Header/header.module.css";
 import { Link } from "react-router-dom";
 import { selectUser } from "../../app/store/authSelectors";
 import { useSelector } from "react-redux";
-import { UserMenu } from "../UserMenu/UserMenu";
 import { Button } from "../Button/Button";
 import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
 export const MenuHeader = ({isOpen,isLoggedIn,openUserMenu,isOpenMenu}) => {
@@ -49,7 +48,6 @@ export const MenuHeader = ({isOpen,isLoggedIn,openUserMenu,isOpenMenu}) => {
           <LogOut />
         </button>
         </div>
-        {isOpenMenu && <UserMenu />}
         <div
           className={style.burgerMobileBtns}
           style={{ display: isLoggedIn ? "none" : "flex" }}

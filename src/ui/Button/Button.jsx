@@ -1,4 +1,4 @@
-import style from './button.module.css'
+import style from './button.module.scss'
 import { useNavigate } from 'react-router-dom'
 export const Button = () => {
     const navigateToLogin = useNavigate()

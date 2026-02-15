@@ -9,11 +9,9 @@ import { NavBar } from "../NavBar/NavBar.jsx";
 import { Button } from "../Button/Button.jsx";
 import { ReactComponent as BuregerMenu } from "../../assets/icons/burger.svg";
 import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
-import { UserMenu } from "../UserMenu/UserMenu.jsx";
 import { Container } from "../../components/Container/Container.jsx";
 import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 export const Header = () => {
 
   const [isOpenBurger, setOpenBurger] = useState(false);
