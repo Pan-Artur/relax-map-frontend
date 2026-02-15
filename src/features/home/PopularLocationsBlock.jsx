@@ -87,12 +87,14 @@ export default function PopularLocationsBlock() {
           >
             {locationsData.map((location) => (
               <SwiperSlide key={location.id}>
-                <LocationsCard
-                  place={location.place}
-                  image={location.image}
-                  rating={location.rate}
-                  title={location.title}
-                />
+                <div className={styles.popular__slider__PopularCard}>
+                  <LocationsCard
+                    place={location.place}
+                    image={location.image}
+                    rating={location.rate}
+                    title={location.title}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
