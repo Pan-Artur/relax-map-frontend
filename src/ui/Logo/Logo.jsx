@@ -7,8 +7,8 @@ import style from "./Logo.module.scss";
 export const Logo = () => {
   return (
     <Link to="/" className={style.link}>
-      <LogoIcon className={style.icon} />
-      <p className={style.title}>Relax Map</p>
+      <LogoIcon className={style.link__iconImg} />
+      <p className={style.link__iconTitle}>Relax Map</p>
     </Link>
   );
 };

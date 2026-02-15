@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 
-import style from "./header.module.css";
+import style from "./header.module.scss";
 import { Logo } from "../Logo/Logo.jsx";
 import { NavBar } from "../NavBar/NavBar.jsx";
 import { Button } from "../Button/Button.jsx";
@@ -58,51 +58,52 @@ export const Header = () => {
   return (
     <header className={style.header}>
       <Container>
-        <div className={style.backgroundContainer}>
-          <div className={style.logoContainer}>
+        <div className={style.header__backgroundContainer}>
+          <div className={style.header__backgroundContainer__logoContainer}>
             <Logo />
           </div>
 
-          <div className={style.NavBarAndbuttons}>
+          <div className={style.header__backgroundContainer__NavBarAndbuttons}>
             <NavBar />
             <button
-              className={style.shareLoctionBtn}
+              className={style.header__backgroundContainer__NavBarAndbuttons__shareLoctionBtn}
               onClick={handleShareLocation}
+              style={{display: isLoggedIn ? "flex" : "none"}}
             >
               Поділитись локацією
             </button>
 
             <div
-              className={style.desctopBtns}
+              className={style.header__backgroundContainer__NavBarAndbuttons__desctopBtns}
               style={{ display: isLoggedIn ? "none" : "flex" }}
             >
               <Button />
             </div>
 
             <div
-              className={style.userInfo}
+              className={style.header__backgroundContainer__NavBarAndbuttons__userInfo}
               onClick={toggleUserMenu}
               style={{ display: isLoggedIn ? "flex" : "none" }}
             >
               <Link to={`/profile/${user?.id}`}>
-                <div className={style.UserAvatarAndName}>
+                <div className={style.header__backgroundContainer__NavBarAndbuttons__userInfo__UserAvatarAndName}>
                   <img
-                    className={style.userAvatar}
+                    className={style.header__backgroundContainer__NavBarAndbuttons__userInfo__UserAvatarAndName__userAvatar}
                     src={user?.avatar || defaultImageSrc}
                     alt="UserAvatar"
                   />
                   <p>{user?.name}</p>
                 </div>
               </Link>
-              <button className={style.logOutBtn}>
+              <button className={style.header__backgroundContainer__NavBarAndbuttons__userInfo__logOutBtn}>
                 <LogOut />
               </button>
             </div>
           </div>
 
-          <div className={style.mobileNavBarAndButtons}>
-            <button className={style.burgerMenu} onClick={openBurger}>
-              <BuregerMenu className={style.burgerMenuIcon} />
+          <div className={style.header__backgroundContainer__mobileNavBarAndButtons}>
+            <button className={style.header__backgroundContainer__mobileNavBarAndButtons__burgerMenu} onClick={openBurger}>
+              <BuregerMenu className={style.header__backgroundContainer__mobileNavBarAndButtons__burgerMenu__burgerMenuIcon} />
             </button>
             <MenuHeader
               isOpen={isOpen}

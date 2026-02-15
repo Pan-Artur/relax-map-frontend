@@ -24,7 +24,7 @@
 .NavBarAndbuttons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 .navBar ul {
@@ -56,13 +56,18 @@
   border: 1px solid #cc6534;
   border-radius: 6px;
   height: 38px;
-  padding: 4px 10px;
-  margin: 0 0 0 16px;
   background: #cc6534;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 150%;
   color: #FFFFFF;
+
+}
+
+.shareLoctionBtn {
+  height: 32px;
+  font-size: 16px;
+  padding: 0 16px;
 }
 
 .shareLoctionMobileBtn {
@@ -88,116 +93,8 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .NavBarAndbuttons,
-  .desctopBtns {
-    display: none;
-  }
 
-  .mobileNavBarAndButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
 
-  .burgerMenu {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    border: 1px solid #00000015;
-    border-radius: 6px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobileList {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    background: #fff2ec;
-    padding: 20px;
-    border-radius: 6px;
-    z-index: 10000;
-  }
-
-  .burgerMenuDisable {
-    display: none;
-  }
-
-  .mobileBtns,
-  .burgerMobileBtns {
-    display: flex;
-    flex-direction: column;
-    column-gap: 10px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1374px) {
-  .NavBarAndbuttons {
-    display: none;
-  }
-
-  .mobileNavBarAndButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 234px;
-  }
-
-  .mobileList {
-    top: 122%;
-    right: -65px;
-    width: 114px;
-    padding: 10px 20px;
-  }
-  .burgerMobileBtns{
-    column-gap: 10px;
-  }
-}
-
-@media (min-width: 1375px) {
-  .NavBarAndbuttons {
-    display: flex;
-    justify-content: flex-end;
-    column-gap: 32px;
-  }
-
-  .mobileNavBarAndButtons,
-  .burgerMenu,
-  .mobileList {
-    display: none;
-  }
-
-  .desctopBtns {
-    display: flex;
-    column-gap: 16px;
-  }
-
-  .userInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .userAvatar{
-    width: 32px;
-    height: 32px;
-  }
-  .UserAvatarAndName{
-    position: relative;
-  }
-  .logOutBtn{
-    display: flex;
-    margin-left: 8px;
-    border-left: 1px solid #00000026;
-    padding-left: 8px;
-    align-items: center;
-    justify-content: center;
-  }
-}
 @media (min-width: 375px) and (max-width: 768px){
     .mobileNavBarAndButtons{
         width: 32px;
@@ -328,9 +225,7 @@
         text-decoration: none;
         color: black;
     }
-    .mobileNavContainer{
-        position: relative;
-    }
+
     .mobileList{
         position: absolute;
         display: flex;
@@ -407,3 +302,48 @@
         width: 110px;
     }
 }
+
+@media (min-width: 1375px) {
+  .NavBarAndbuttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 32px;
+  }
+
+  .mobileNavBarAndButtons{
+    display: none;
+  }
+  .burgerMenu
+  .mobileList {
+    display: none;
+  }
+
+  .desctopBtns {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  .userInfo {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .userAvatar{
+    width: 32px;
+    height: 32px;
+  }
+  .UserAvatarAndName{
+    position: relative;;
+  }
+  .logOutBtn{
+    display: flex;
+    margin-left: 8px;
+    border-left: 1px solid #00000026;
+    padding-left: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
