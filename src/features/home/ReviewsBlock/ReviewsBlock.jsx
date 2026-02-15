@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "./ReviewsBlock.module.scss";
+import { Container } from "../../../components/Container/Container.jsx";
 
 const fetchReviews = async () => [
   {
@@ -62,6 +63,7 @@ export default function ReviewsBlock() {
 
   return (
     <section className={styles.reviews}>
+      <Container>
       <div className={styles.container}>
         <div className={styles.reviews__header}>
           <h2>Останні відгуки</h2>
@@ -119,6 +121,7 @@ export default function ReviewsBlock() {
           </div>
         </div>
       </div>
+      </Container>
     </section>
   );
 }

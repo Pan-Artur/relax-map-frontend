@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./AdvantagesBlock.module.scss";
+import { Container } from "../../../components/Container/Container.jsx";
 
 export function AdvantagesBlock() {
     const advantages = [
@@ -32,6 +33,7 @@ export function AdvantagesBlock() {
 
     return (
         <section className={styles.advantages}>
+            <Container>
               <div className={styles.container}>
             <h2 className={styles.advantagesTitle}>Ключові переваги</h2>
 
@@ -59,6 +61,7 @@ export function AdvantagesBlock() {
                 </div>
             </div>
             </div>
+            </Container>
         </section>
 
     );

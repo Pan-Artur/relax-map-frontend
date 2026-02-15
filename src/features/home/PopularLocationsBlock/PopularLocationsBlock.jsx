@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchPopularLocations } from "./api.js";
-import { LocationsCard } from "../../features/locations/components/LocationsCard.jsx";
+import { fetchPopularLocations } from "../api.js";
+import { LocationsCard } from "../../locations/components/LocationsCard.jsx";
 import styles from "./PopularLocationsBlock.module.scss";
-import { Container } from "../../components/Container/Container.jsx";
-import { ReactComponent as ArrowBack } from "../../assets/icons/arrow_back.svg";
-import { ReactComponent as ArrowNext } from "../../assets/icons/arrow_forward.svg";
+import { Container } from "../../../components/Container/Container.jsx";
+import { ReactComponent as ArrowBack } from "../../../assets/icons/arrow_back.svg";
+import { ReactComponent as ArrowNext } from "../../../assets/icons/arrow_forward.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
