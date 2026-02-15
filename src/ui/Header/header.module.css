@@ -24,7 +24,7 @@
 .NavBarAndbuttons {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .navBar ul {
@@ -56,18 +56,13 @@
   border: 1px solid #cc6534;
   border-radius: 6px;
   height: 38px;
+  padding: 4px 10px;
+  margin: 0 0 0 16px;
   background: #cc6534;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 150%;
   color: #FFFFFF;
-
-}
-
-.shareLoctionBtn {
-  height: 32px;
-  font-size: 16px;
-  padding: 0 16px;
 }
 
 .shareLoctionMobileBtn {
@@ -183,7 +178,6 @@
   }
 
   .userInfo {
-    width: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;

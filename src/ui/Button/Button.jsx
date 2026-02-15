@@ -7,7 +7,6 @@ export const Button = () => {
         <>
             <button className={style.signInBtn} onClick={()=> navigateToLogin("/auth/login")}>Вхід</button>
             <button className={style.signUpBtn} onClick={()=> navigateToRegistration("/auth/register")}>Реєстрація</button>
-            
         </>
         
     )

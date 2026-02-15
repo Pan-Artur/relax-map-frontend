@@ -1,12 +1,11 @@
 .navBar{
     display: flex;
-    width: 426px;
     height: 27px;
     align-items: center;
 }
 .list{
-    width: 100%;
     display: flex;
+    gap: 32px;
     justify-content: space-between;
     padding: 0;
 }
