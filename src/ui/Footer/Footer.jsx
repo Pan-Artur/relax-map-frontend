@@ -10,15 +10,15 @@ export const Footer = () => {
   return (
     <footer className={style.footer}>
       <Container>
-        <div className={style.footerContainer}>
-          <div className={style.topFooterContainer}>
-            <div className={style.logoContainer}>
+        <div className={style.footer_footerContainer}>
+          <div className={style.footer__footerContainer__topFooterContainer}>
+            <div className={style.footer__footerContainer__topFooterContainer__logoContainer}>
               <Logo />
             </div>
-            <div className={style.socialContainer}>
-              <Facebook className={style.socialIcon} />{" "}
-              <Instagram className={style.socialIcon} />{" "}
-              <Twitter className={style.socialIcon} />{" "}
+            <div className={style.footer__footerContainer__topFooterContainer__socialContainer}>
+              <Facebook className={style.socialIcon} />
+              <Instagram className={style.socialIcon} />
+              <Twitter className={style.socialIcon} />
               <Youtube className={style.socialIcon} />
             </div>
             <div className={style.footerNavBar}>
