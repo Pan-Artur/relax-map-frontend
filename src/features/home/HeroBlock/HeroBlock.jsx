@@ -43,7 +43,6 @@ export function HeroBlock() {
                     
                 </form>
                 </div>
-            </div>
             </Container>
         </section>
     );
