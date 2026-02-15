@@ -291,6 +291,10 @@
                         justify-content: center;
                       }
                 }
+                &__desctopBtns{
+                    display: flex;
+                    column-gap: 16px;
+                }
             }
             &__mobileNavBarAndButtons{
                 display: none;
@@ -298,10 +302,7 @@
                     display:none;
                 }
             }
-            &__desctopBtns{
-                display: flex;
-                column-gap: 16px;
-            }
+
         }
     }
 
