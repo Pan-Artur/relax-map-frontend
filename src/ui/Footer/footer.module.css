@@ -120,6 +120,7 @@
     .footer{
         height: 283px;
         position: absolute;
+        margin-top: 20px;
     }
     .topFooterContainer{
         height: 67px;
