@@ -1,18 +1,19 @@
-import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { selectIsLoggedIn, selectUser } from '../../app/store/authSelectors.js'
+
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 import { logout } from '../../app/store/authSlice.js'
 
-import style from './header.module.css'
-import { Logo } from '../Logo/Logo.jsx'
-import { NavBar } from '../NavBar/NavBar.jsx'
-import { Button } from '../Button/Button.jsx'
-import { ReactComponent as BuregerMenu } from '../../assets/icons/burger.svg'
-import { ReactComponent as LogOut } from '../../assets/icons/LogOut.svg'
-import { Container } from '../../components/Container/Container.jsx'
-import { MenuHeader } from '../MenuHeader/MenuHeader.jsx'
-import { useEffect } from 'react'
+import style from "./header.module.scss";
+import { Logo } from "../Logo/Logo.jsx";
+import { NavBar } from "../NavBar/NavBar.jsx";
+import { Button } from "../Button/Button.jsx";
+import { ReactComponent as BuregerMenu } from "../../assets/icons/burger.svg";
+import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
+import { Container } from "../../components/Container/Container.jsx";
+import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
+import { useEffect } from "react";
 import { IoIosClose } from 'react-icons/io'
 
 // region image

@@ -21,7 +21,7 @@ export const Footer = () => {
               <Twitter className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
               <Youtube className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
             </div>
-            <div className={style.footerNavBar}>
+            <div className={style.footer__footerContainer__topFooterContainer__footerNavBar}>
               <NavBar isFooter />
             </div>
           </div>

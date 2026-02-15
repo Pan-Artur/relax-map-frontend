@@ -1,0 +1,330 @@
+.header{
+    width: 100%;
+    height: 72px;
+    background: #fff2ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__backgroundContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__logoContainer{
+            width: 121px;
+            height: 29px;
+            display: flex;
+            align-items: center;
+        }
+        &__NavBarAndbuttons{
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            &__shareLoctionBtn{
+                border: 1px solid #cc6534;
+                border-radius: 6px;
+                background: #cc6534;
+                font-weight: 500;
+                line-height: 150%;
+                color: #FFFFFF;
+                height: 32px;
+                font-size: 16px;
+                padding: 0 16px;
+            }
+            &__userInfo{
+                &__UserAvatarAndName {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 8px;
+                    cursor: pointer;
+                }
+                &__userAvatar {
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                &__logOutBtn {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
+@media (min-width: 375px) and (max-width: 768px){
+    .header{
+        &__backgroundContainer{
+            &__mobileNavBarAndButtons{
+                width: 32px;
+                height: 32px;
+                &__burgerMenu{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 32px;
+                    height: 32px;
+                    border: 1px solid #00000015;
+                    border-radius: 6px;
+                }
+                &_userInfo{
+                    &__UserAvatarAndName{
+                        display: flex;
+                        position: relative;
+                        width: 79px;
+                        height: 32px;
+                        align-items: center;
+                        column-gap: 8px;
+                        padding-right: 3px;
+                        cursor: pointer;
+                        &_userAvatar{
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                        }
+                    }
+                    &__logOutBtn{
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background:none ;
+                        border: none;
+                        cursor: pointer;
+                        border-left: 1px solid #00000026;
+                    }
+                }
+            }
+            &__NavBarAndbuttons{
+                display: none;
+                &__desctopBtns{
+                    display: none; 
+                }
+                &__shareLoctionBtn{
+                    display: none !important; 
+                }
+            }
+        }
+    }
+
+    .burgerMenuDisable{
+        display: none;
+    } 
+    .mobileBtns{
+        display: none !important;
+    }
+    .mobileNavContainer{
+        position: relative;
+    }
+    .mobileList{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
+        background: #FFF2EC;
+        z-index: 10000;
+        row-gap: 32px;
+    }
+    .burgerMobileBtns{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .shareLoctionMobileBtn{
+        width: 125px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    .ContainerUser{
+        display: flex;
+        width: 110px;
+    }
+}
+@media  (min-width: 768px) and (max-width: 1374px)  {
+   .header{
+    &__backgroundContainer{
+        &__mobileNavBarAndButtons{
+            &__burgerMenu{
+                display: flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;    
+                width:32px;
+                height:32px;
+                border:1px solid #00000015;
+                border-radius:6px;
+                &__burgerMenuIcon{
+                    display:flex;
+                }
+            }
+        }
+        &__NavBarAndbuttons{
+            &__shareLoctionBtn{
+                display:flex; 
+                width:196px;
+                height:32px;
+                background:#CC6534;
+                color:white;
+                border:none;
+                border-radius:6px;
+                cursor:pointer;
+                justify-content:center;
+                align-items:center;
+                font-family:"Montserrat", sans-serif;
+                font-weight:500;
+                font-size:16px;
+            }
+            &__UserInfo{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                &__userAvataAndName{
+                    display: flex;
+                    position: relative;
+                    width: 79px;
+                    height: 32px;
+                    align-items: center;
+                    column-gap: 8px;
+                    padding-right: 3px;
+                    cursor: pointer;
+                }
+                &__logOutBtn{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    background:none ;
+                    border: none;
+                    cursor: pointer;
+                    border-left: 1px solid #00000026;
+                }
+            }
+            &__desctopBtns{
+                display: none !important;
+            }
+        } 
+        &__mobileNavBarAndButtons{
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .mobileItem{
+        list-style:none;
+        font-family:"Montserrat", sans-serif;
+        font-weight:500;
+        font-size:12px;
+    } 
+    .mobileNavLink{
+        text-decoration:none;
+        color:black;
+    }
+    .mobileList{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
+        background: #FFF2EC;
+        z-index: 10000;
+        row-gap: 32px;
+    }
+    .mobileBtns{
+        display: none !important;
+    }
+    .shareLoctionMobileBtn{
+        display:none !important; 
+    }
+    .ContainerUser{
+        display: flex;
+        width: 110px;
+    }
+}
+}
+
+@media (min-width: 1375px) {
+    .header{
+        &__backgroundContainer{
+            &__NavBarAndbuttons{
+                display: flex;
+                justify-content: flex-end;
+                column-gap: 32px;
+                &__userInfo{
+                    width: 130px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &__UserAvatarAndName{
+                        position: relative;;
+                        &__userAvatar{
+                            width: 32px;
+                            height: 32px;
+                          }
+                    }
+                    &__logOutBtn{
+                        display: flex;
+                        margin-left: 8px;
+                        border-left: 1px solid #00000026;
+                        padding-left: 8px;
+                        align-items: center;
+                        justify-content: center;
+                      }
+                }
+                &__desctopBtns{
+                    display: flex;
+                    column-gap: 16px;
+                }
+            }
+            &__mobileNavBarAndButtons{
+                display: none;
+                &__burgerMenu{
+                    display:none;
+                }
+            }
+
+        }
+    }
+
+
+    .mobileList {
+      display: none;
+    }
+  
+  
+
+
+
+    .logOutBtn{
+      display: flex;
+      margin-left: 8px;
+      border-left: 1px solid #00000026;
+      padding-left: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+  
+  }
+
+
+
