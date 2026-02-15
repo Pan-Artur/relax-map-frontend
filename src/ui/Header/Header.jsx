@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { selectIsLoggedIn, selectUser } from "../../app/store/authSelectors.js";
 
 import style from "./header.module.css";
@@ -13,7 +13,9 @@ import { UserMenu } from "../UserMenu/UserMenu.jsx";
 import { Container } from "../../components/Container/Container.jsx";
 import { MenuHeader } from "../MenuHeader/MenuHeader.jsx";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 export const Header = () => {
+
   const [isOpenBurger, setOpenBurger] = useState(false);
   const [isOpenUserMenu, setOpenUserMenu] = useState(false);
 
@@ -69,12 +71,13 @@ export const Header = () => {
               <Button />
             </div>
 
-              <div className={style.userInfo} onClick={toggleUserMenu} style={{display:isLoggedIn ? "flex": "none"}}>
-                <div className={style.UserAvatarAndName}>
-                  <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
-                  <p>{user?.name}</p>
-                </div>
-                {isOpenUserMenu && <UserMenu />}
+              <div className={style.userInfo} onClick={toggleUserMenu} style={{display:isLoggedIn ? "flex": "flex"}}>
+                <Link to={`/profile/${user?.id}`}>
+                  <div className={style.UserAvatarAndName}>
+                    <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
+                    <p>yrtytuy</p>
+                  </div>
+                </Link>
                 <button className={style.logOutBtn}>
                   <LogOut />
                 </button>
