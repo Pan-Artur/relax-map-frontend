@@ -1,16 +1,21 @@
+import { Cloudinary } from '@cloudinary/url-gen';
+import { auto } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
 import style from "./LocationGallery.module.scss";
 
 export const LocationGallery = ({ gallery, poster }) => {
-  const image =
-    Array.isArray(gallery) && gallery.length > 0
-      ? gallery[0]
-      : poster || "https://image2url.com/r2/default/images/1770306879097-39f68f5d-42b3-4136-bdc9-39ce5c3a49e9.png";
+  const cld = new Cloudinary({ cloud: { cloudName: 'dqbdkdv4e' } });
 
-  return (
-    <img
-      src={`http://localhost:4000${image}`}
-      alt="Location gallery"
-      className={style.image}
-    />
-  );
+  const publicId = Array.isArray(gallery) && gallery.length > 0
+    ? gallery[0]
+    : poster;
+
+  const img = cld
+    .image(publicId)
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()).width(500).height(500));
+
+  return <AdvancedImage cldImg={img} className={style.image} />;
 };
