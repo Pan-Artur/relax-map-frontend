@@ -1,7 +1,12 @@
 import axios from "axios";
 
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:10000"
+    : "https://relaxmap-backend.onrender.com";
+
 const apiInstance = axios.create({
-  baseURL: "https://relaxmap-backend.onrender.com/",
+  baseURL,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -21,9 +26,8 @@ apiInstance.interceptors.response.use(
   (error) => {
     const message =
       error?.response?.data?.message || error.message || "API error!";
-
     return Promise.reject(new Error(message));
-  },
+  }
 );
 
 export const api = {
@@ -50,7 +54,7 @@ export const api = {
 
   uploadImage: (file) => {
     const formData = new FormData();
-
+    
     formData.append("file", file);
 
     return apiInstance.post("/upload", formData, {
