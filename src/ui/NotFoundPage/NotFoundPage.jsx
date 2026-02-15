@@ -1,14 +1,14 @@
 import { Container } from "../../components/Container/Container";
-import { ReactComponent as NotFound} from '../../assets/icons/not found.svg'
+import NotFound from '../../assets/icons/errorPage.png';
 import style from "./NotFoundPage.module.css"
 export const NotFoundPage = () => {
   return (
     <Container>
 
       <h2 className={style.NotFoundTitle}>Ми шукали як могли...</h2>
-      <p className={style.NotFoundSubTitle}>Ведіть правильний шлях</p>
+      <p className={style.NotFoundSubTitle}>Введіть правильний шлях</p>
       <div className={style.NotFoundSvgContainer}>
-        <NotFound height={500}/>
+        <img style={{width:'300px'}} src={NotFound} alt="" />
       </div>
     </Container>
   );

@@ -47,6 +47,7 @@ export const LocationsGrid = ({ locationsData }) => {
         {locationsData.map((location) => (
           <li className={styles.locationsGridCard} key={location.id}>
             <LocationsCard
+			  id={location.id}
               place={location.place}
               image={location.poster}
               rating={location.rate}
