@@ -99,6 +99,18 @@ export const Header = () => {
                 <LogOut />
               </button>
             </div>
+              <div className={style.userInfo} onClick={toggleUserMenu} style={{display:isLoggedIn ? "flex": "none"}}>
+                <Link to={`/profile/${user?.id}`}>
+                  <div className={style.UserAvatarAndName}>
+                    <img className={style.userAvatar} src={user?.avatar} alt="UserAvatar" />
+                    <p>{user?.id}</p>
+                  </div>
+                </Link>
+                <button className={style.logOutBtn}>
+                  <LogOut />
+                </button>
+              </div>
+
           </div>
 
           <div className={style.header__backgroundContainer__mobileNavBarAndButtons}>
