@@ -43,7 +43,6 @@ export const LocationsGrid = ({ locationsData }) => {
   return (
     <Container>
       <ul className={styles.locationsGrid}>
-        {/* {console.log(locationsData)} */}
         {locationsData.map((location) => (
           <li className={styles.locationsGridCard} key={location.id}>
             <LocationsCard
