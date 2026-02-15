@@ -11,7 +11,6 @@ export const LocationsPage = ({ id }) => {
   const heroSearch = location.state?.search;
   const [inputData, setInputData] = useState("");
 
-  
   const regions = [
     { id: "", label: "Вся Україна" },
     { id: "kyivska", label: "Київська " },
@@ -56,17 +55,11 @@ export const LocationsPage = ({ id }) => {
   const [locationsData, setLocationsData] = useState([]);
 
   useEffect(() => {
-    if (heroSearch === undefined) {
-      setInputData((state) => state);
-    } else {
-      setInputData((state) => (state = heroSearch));
-    }
-  }, [heroSearch]);
-  useEffect(() => {
     const fetchData = async () => {
       try {
         if (id) {
-          const data = await api.getUserLocations(id);
+          const data = await api.getLocations();
+          console.log("RESPONSE:", data.data);
           setLocationsData(data.data);
         } else {
           const data = await api.getLocations();

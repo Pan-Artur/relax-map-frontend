@@ -1,342 +1,411 @@
 .header {
-	width: 100%;
-	height: 72px;
-	background: #fff2ec;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 72px;
+  background: #fff2ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .backgroundContainer {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logoContainer {
-	width: 121px;
-	height: 29px;
-	display: flex;
-	align-items: center;
+  width: 121px;
+  height: 29px;
+  display: flex;
+  align-items: center;
 }
 
 .NavBarAndbuttons {
-	display: flex;
-	align-items: center;
-	gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .navBar ul {
-	display: flex;
-	gap: 32px;
+  display: flex;
+  gap: 32px;
 }
 
 .navBar li,
 .mobileItem {
-	margin: 0;
+  margin: 0;
 }
 
 .navLink {
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 150%;
-	color: #4c2613;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #4c2613;
 }
 
 .navLink,
 .mobileNavLink {
-	text-decoration: none;
-	color: #000;
-	font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
 }
 
 .shareLoctionBtn,
 .shareLoctionMobileBtn {
-	border: 1px solid #cc6534;
-	border-radius: 6px;
-	height: 38px;
-	background: #cc6534;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 150%;
-	color: #ffffff;
-}
-
-.shareLoctionBtn {
-	height: 32px;
-	font-size: 16px;
-	padding: 0 16px;
+  border: 1px solid #cc6534;
+  border-radius: 6px;
+  height: 38px;
+  padding: 4px 10px;
+  margin: 0 0 0 16px;
+  background: #cc6534;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #FFFFFF;
 }
 
 .shareLoctionMobileBtn {
-	height: 38px;
-	font-size: 10px;
+  height: 38px;
+  font-size: 10px;
 }
 
 .UserAvatarAndName {
-	display: flex;
-	align-items: center;
-	column-gap: 8px;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
 }
 
 .userAvatar {
-	border-radius: 50%;
-	object-fit: cover;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .logOutBtn {
-	background: none;
-	border: none;
-	cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
-	.mobileNavBarAndButtons {
-		width: 32px;
-		height: 32px;
-	}
-	.mobileNavLink {
-		text-decoration: none;
-		color: black;
-	}
-	.burgerMenuDisable {
-		display: none;
-	}
-	.burgerMenu {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 32px;
-		height: 32px;
-		border: 1px solid #00000015;
-		border-radius: 6px;
-	}
-	.NavBarAndbuttons {
-		display: none;
-	}
-	.mobileBtns {
-		display: none !important;
-	}
-	.desctopBtns {
-		display: none;
-	}
-	.mobileNavContainer {
-		position: relative;
-	}
-	.mobileList {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		left: 0;
-		top: 72px;
-		width: 100%;
-		height: 100%;
-		background: #fff2ec;
-		z-index: 10000;
-		row-gap: 32px;
-	}
-	.burgerMobileBtns {
-		display: flex;
-		flex-direction: column;
-		row-gap: 10px;
-	}
-	.shareLoctionBtn {
-		display: none !important;
-	}
-	.UserAvatarAndName {
-		display: flex;
-		position: relative;
-		width: 79px;
-		height: 32px;
-		align-items: center;
-		column-gap: 8px;
-		padding-right: 3px;
-		cursor: pointer;
-	}
-	.userAvatar {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-	}
-	.logOutBtn {
-		width: 30px;
-		height: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: none;
-		border: none;
-		cursor: pointer;
-		border-left: 1px solid #00000026;
-	}
-	.shareLoctionMobileBtn {
-		width: 125px;
-		height: 38px;
-		background: #cc6534;
-		color: white;
-		border: none;
-		border-radius: 6px;
-		cursor: pointer;
-		justify-content: center;
-		align-items: center;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-		font-size: 10px;
-	}
+@media (max-width: 768px) {
+  .NavBarAndbuttons,
+  .desctopBtns {
+    display: none;
+  }
 
-	.ContainerUser {
-		display: flex;
-		width: 110px;
-	}
+  .mobileNavBarAndButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .burgerMenu {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #00000015;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileList {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background: #fff2ec;
+    padding: 20px;
+    border-radius: 6px;
+    z-index: 10000;
+  }
+
+  .burgerMenuDisable {
+    display: none;
+  }
+
+  .mobileBtns,
+  .burgerMobileBtns {
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+  }
 }
-@media (min-width: 768px) and (max-width: 1374px) {
-	.burgerMenu {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 32px;
-		height: 32px;
-		border: 1px solid #00000015;
-		border-radius: 6px;
-	}
-	.burgerMenuIcon {
-		display: flex;
-	}
-	.burgerMenuDisable {
-		display: none;
-	}
-	.mobileItem {
-		list-style: none;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-		font-size: 12px;
-	}
-	.mobileNavLink {
-		text-decoration: none;
-		color: black;
-	}
 
-	.mobileList {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		left: 0;
-		top: 72px;
-		width: 100%;
-		height: 100%;
-		background: #fff2ec;
-		z-index: 10000;
-		row-gap: 32px;
-	}
-	.NavBarAndbuttons {
-		display: none;
-	}
-	.mobileNavBarAndButtons {
-		width: 32px;
-		height: 32px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.mobileBtns {
-		display: none !important;
-	}
-	.shareLoctionBtn {
-		display: flex;
-		width: 196px;
-		height: 32px;
-		background: #cc6534;
-		color: white;
-		border: none;
-		border-radius: 6px;
-		cursor: pointer;
-		justify-content: center;
-		align-items: center;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-		font-size: 16px;
-	}
-	.userAvatar {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-	}
-	.UserAvatarAndName {
-		display: flex;
-		position: relative;
-		width: 79px;
-		height: 32px;
-		align-items: center;
-		column-gap: 8px;
-		padding-right: 3px;
-		cursor: pointer;
-	}
-	.logOutBtn {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 30px;
-		height: 30px;
-		background: none;
-		border: none;
-		cursor: pointer;
-		border-left: 1px solid #00000026;
-	}
-	.shareLoctionMobileBtn {
-		display: none !important;
-	}
-	.ContainerUser {
-		display: flex;
-		width: 110px;
-	}
+@media (min-width: 769px) and (max-width: 1374px) {
+  .NavBarAndbuttons {
+    display: none;
+  }
 
-	@media (min-width: 1375px) {
-		.NavBarAndbuttons {
-			display: flex;
-			justify-content: flex-end;
-			column-gap: 32px;
-		}
+  .mobileNavBarAndButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 234px;
+  }
 
-		.mobileNavBarAndButtons {
-			display: none;
-		}
-		.burgerMenu .mobileList {
-			display: none;
-		}
+  .mobileList {
+    top: 122%;
+    right: -65px;
+    width: 114px;
+    padding: 10px 20px;
+  }
+  .burgerMobileBtns{
+    column-gap: 10px;
+  }
+}
 
-		.desctopBtns {
-			display: flex;
-			column-gap: 16px;
-		}
+@media (min-width: 1375px) {
+  .NavBarAndbuttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 32px;
+  }
 
-		.userInfo {
-			width: 130px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		.userAvatar {
-			width: 32px;
-			height: 32px;
-		}
-		.UserAvatarAndName {
-			position: relative;
-		}
-		.logOutBtn {
-			display: flex;
-			margin-left: 8px;
-			border-left: 1px solid #00000026;
-			padding-left: 8px;
-			align-items: center;
-			justify-content: center;
-		}
-	}
+  .mobileNavBarAndButtons,
+  .burgerMenu,
+  .mobileList {
+    display: none;
+  }
+
+  .desctopBtns {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  .userInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .userAvatar{
+    width: 32px;
+    height: 32px;
+  }
+  .UserAvatarAndName{
+    position: relative;
+  }
+  .logOutBtn{
+    display: flex;
+    margin-left: 8px;
+    border-left: 1px solid #00000026;
+    padding-left: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 375px) and (max-width: 768px){
+    .mobileNavBarAndButtons{
+        width: 32px;
+        height: 32px;
+    }
+    .mobileNavLink{
+        text-decoration: none;
+        color: black;
+    }
+    .burgerMenuDisable{
+        display: none;
+    } 
+    .burgerMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #00000015;
+        border-radius: 6px;
+    }
+    .NavBarAndbuttons{
+        display: none;
+    }
+    .mobileBtns{
+        display: none !important;
+    }
+    .desctopBtns{
+        display: none;
+    }
+    .mobileNavContainer{
+        position: relative;
+    }
+    .mobileList{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
+        background: #FFF2EC;
+        z-index: 10000;
+        row-gap: 32px;
+    }
+    .burgerMobileBtns{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .shareLoctionBtn{
+        display: none !important; 
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .userAvatar{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        
+    }
+    .logOutBtn{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:none ;
+        border: none;
+        cursor: pointer;
+        border-left: 1px solid #00000026;
+    }
+    .shareLoctionMobileBtn{
+        width: 125px;
+        height: 38px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 10px;
+    }
+    
+    .ContainerUser{
+        display: flex;
+        width: 110px;
+    }
+}
+@media  (min-width: 768px) and (max-width: 1374px)  {
+    .burgerMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+        width: 32px;
+        height: 32px;
+        border: 1px solid #00000015;
+        border-radius: 6px;
+
+    }
+    .burgerMenuIcon{
+        display: flex;
+    }
+    .burgerMenuDisable{
+        display: none;
+    }
+    .mobileItem{
+        list-style: none;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .mobileNavLink{
+        text-decoration: none;
+        color: black;
+    }
+    .mobileNavContainer{
+        position: relative;
+    }
+    .mobileList{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        top: 72px;
+        width: 100%;
+        height: 100%;
+        background: #FFF2EC;
+        z-index: 10000;
+        row-gap: 32px;
+    }
+    .NavBarAndbuttons{
+        display: none;
+    }
+    .mobileNavBarAndButtons{
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mobileBtns{
+        display: none !important;
+    }
+    .shareLoctionBtn{
+        display: flex ; 
+        width: 196px;
+        height: 32px;
+        background: #CC6534;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .userAvatar{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        
+    }
+    .UserAvatarAndName{
+        display: flex;
+        position: relative;
+        width: 79px;
+        height: 32px;
+        align-items: center;
+        column-gap: 8px;
+        padding-right: 3px;
+        cursor: pointer;
+    }
+    .logOutBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background:none ;
+        border: none;
+        cursor: pointer;
+        border-left: 1px solid #00000026;
+    }
+    .shareLoctionMobileBtn{
+        display:none !important; 
+    }
+    .ContainerUser{
+        display: flex;
+        width: 110px;
+    }
 }
 
 .backdrop {
