@@ -183,7 +183,7 @@
   }
 
   .userInfo {
-    width: 113px;
+    width: 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -191,6 +191,17 @@
   .userAvatar{
     width: 32px;
     height: 32px;
+  }
+  .UserAvatarAndName{
+    position: relative;
+  }
+  .logOutBtn{
+    display: flex;
+    margin-left: 8px;
+    border-left: 1px solid #00000026;
+    padding-left: 8px;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media (min-width: 375px) and (max-width: 768px){

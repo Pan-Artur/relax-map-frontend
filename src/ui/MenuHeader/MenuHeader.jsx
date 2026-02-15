@@ -6,8 +6,7 @@ import { UserMenu } from "../UserMenu/UserMenu";
 import { Button } from "../Button/Button";
 import { ReactComponent as LogOut } from "../../assets/icons/LogOut.svg";
 export const MenuHeader = ({isOpen,isLoggedIn,openUserMenu,isOpenMenu}) => {
-  const user = useSelector(selectUser);
-  console.log(isLoggedIn)
+  const user = useSelector(selectUser); 
   return (
     <>
       <ul className={`${isOpen ? style.mobileList : style.burgerMenuDisable}`}>
