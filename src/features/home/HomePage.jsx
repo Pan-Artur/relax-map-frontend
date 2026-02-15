@@ -1,7 +1,7 @@
-import { HeroBlock } from "./HeroBlock";
-import { AdvantagesBlock } from "./AdvantagesBlock";
-import PopularLocationsBlock from "./PopularLocationsBlock";
-import ReviewsBlock from "./ReviewsBlock";
+import { HeroBlock } from "./HeroBlock/HeroBlock.jsx";
+import { AdvantagesBlock } from "./AdvantagesBlock/AdvantagesBlock.jsx";
+import PopularLocationsBlock from "./PopularLocationsBlock/PopularLocationsBlock.jsx";
+import ReviewsBlock from "./ReviewsBlock/ReviewsBlock.jsx";
   
 export const HomePage = () => {
   return (
