@@ -22,7 +22,7 @@ export const Footer = () => {
               <Youtube className={style.socialIcon} />
             </div>
             <div className={style.footerNavBar}>
-              <NavBar footer={false} />
+              <NavBar isFooter />
             </div>
           </div>
           <div className={style.bottomFooterContainer}>
