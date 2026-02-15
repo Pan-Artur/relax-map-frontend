@@ -13,6 +13,7 @@ export const ProfilePage = () => {
 	const { id } = useParams()
 	const [userInfo, setUserInfo] = useState(null)
 	const [loading, setLoading] = useState(true)
+	const [locationsData, setLocationsData] = useState([])
 
 	useEffect(() => {
 		if (!id) return
@@ -20,6 +21,15 @@ export const ProfilePage = () => {
 		api
 			.getUserById(id)
 			.then((res) => setUserInfo(res.data))
+			.catch((error) => {
+				console.error(error)
+				setUserInfo(null)
+			})
+			.finally(() => setLoading(false))
+
+		api
+			.getUserLocations(id)
+			.then((res) => setLocationsData(res.data))
 			.catch((error) => {
 				console.error(error)
 				setUserInfo(null)
@@ -35,7 +45,7 @@ export const ProfilePage = () => {
 		<div className={style.container}>
 			<ProfileInfo userId={id} user={userInfo} />
 
-			<LocationsGrid id={id} />
+			<LocationsGrid locationsData={locationsData} />
 
 			{userInfo.locationsCount === 0 && <ProfilePlaceholder userId={id} />}
 		</div>

@@ -21,7 +21,6 @@ export function HeroBlock() {
             }}
         >
             <Container>
-            <div className={styles.heroContent}>
                 <div className={styles.heroContent}>
                 <h1>
                     Відкрий для себе Україну. Знайди ідеальне місце для відпочинку

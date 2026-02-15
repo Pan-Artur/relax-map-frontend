@@ -1,6 +1,6 @@
 import { Container } from "../../components/Container/Container";
-import NotFound from '../../assets/icons/errorPage.png';
-import style from "./NotFoundPage.module.css"
+import { ReactComponent as NotFound} from '../../assets/icons/not found.svg'
+import style from "./NotFoundPage.module.scss"
 export const NotFoundPage = () => {
   return (
     <Container>
