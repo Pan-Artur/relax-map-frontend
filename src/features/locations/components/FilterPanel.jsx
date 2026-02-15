@@ -3,72 +3,29 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useState } from "react";
 import { Container } from "../../../components/Container/Container";
 
-const regions = [
-  { id: "", label: "Вся Україна" },
-  { id: "kievska", label: "Київська " },
-  { id: "zitomirska", label: "Житомирська " },
-  { id: "kirovogradska", label: "Кіровоградська " },
-  { id: "poltavska", label: "Полтавська " },
-  { id: "cherkaska", label: "Черкаська " },
-  { id: "volinska", label: "Волинська " },
-  { id: "dnipropetrovska", label: "Дніпропетровська " },
-  { id: "donetska", label: "Донецька " },
-  { id: "zakarpatska", label: "Закарпатська " },
-  { id: "zaporizka", label: "Запорізька " },
-  { id: "ivanoFrankivska", label: "Івано-Франківська " },
-  { id: "luganska", label: "Луганська " },
-  { id: "lvivska", label: "Львівська " },
-  { id: "mikolaivska", label: "Миколаївська " },
-  { id: "odeska", label: "Одеська " },
-  { id: "rivenska", label: "Рівненська " },
-  { id: "ternopilska", label: "Тернопільська " },
-  { id: "kharkivska", label: "Харківська " },
-  { id: "hmelnicka", label: "Хмельницька " },
-  { id: "chernivecka", label: "Чернівецька " },
-  { id: "chernigivska", label: "Чернігівська " },
-  { id: "hersonska", label: "Херсонська " },
-  { id: "sumska", label: "Сумська " },
-  { id: "krim", label: "АР Крим" },
-  { id: "vinnicka", label: "Вінницька " },
-];
-
-const places = [
-  { id: "beach", label: "Пляж" },
-  { id: "camping", label: "Кемпінг" },
-  { id: "park", label: "Парк" },
-  { id: "monument", label: "Іст. пам'ятка" },
-];
-
-const sortOptions = [
-  { id: "popular", label: "За популярністю" },
-  { id: "highRated", label: "За рейтингом" },
-  { id: "new", label: "Новіші спочатку" },
-];
-
-export const FilterPanel = () => {
+export const FilterPanel = ({
+  regions,
+  places,
+  sortOptions,
+  selectedRegion,
+  setSelectedRegion,
+  selectedPlaces,
+  setSelectedPlaces,
+  selectedSort,
+  setSelectedSort,
+  togglePlace,
+  inputData,
+  setInputData
+}) => {
   const [regionState, changeRegionState] = useState(false);
   const [placeState, changePlaceState] = useState(false);
   const [sortState, changeSortingState] = useState(false);
 
-  const [selectedRegion, setSelectedRegion] = useState({
-    id: "",
-    label: "Область",
-  });
-  const [selectedPlaces, setSelectedPlaces] = useState([]);
-  const [selectedSort, setSelectedSort] = useState({
-    id: "",
-    label: "Сортування",
-  });
+  const sortChange = (option) => {
 
-  const togglePlace = (place) => {
-    const exists = selectedPlaces.find((p) => p.id === place.id);
-    if (exists) {
-      setSelectedPlaces(selectedPlaces.filter((p) => p.id !== place.id));
-    } else {
-      setSelectedPlaces([...selectedPlaces, place]);
-    }
-  };
-
+    changeSortingState((state) => !state)
+    setSelectedSort(option)
+  }
   return (
     <section className={styles.filterPanel}>
       <Container>
@@ -78,6 +35,8 @@ export const FilterPanel = () => {
               className={styles.filterPanelInput}
               type="text"
               placeholder="Пошук"
+              name="filterInput"
+              onChange={(e) => setInputData(e.target.value)}
             />
 
             <div className={styles.filterPanelDropdown}>
@@ -116,7 +75,7 @@ export const FilterPanel = () => {
                 </div>
               )}
             </div>
-              
+
             <div className={styles.filterPanelDropdown}>
               <button
                 className={styles.filterPanelButton}
@@ -197,7 +156,7 @@ export const FilterPanel = () => {
               className={styles.filterPanelButton}
               type="button"
               onClick={() => changeSortingState((state) => !state)}
-              id=''
+              id=""
             >
               {selectedSort.label}
               <span className={styles.filterPanelButtonIcon}>
@@ -219,7 +178,7 @@ export const FilterPanel = () => {
                           className={styles.filterPanelRegionsChecknox}
                           name="sort"
                           checked={selectedSort.id === option.id}
-                          onChange={() => setSelectedSort(option)}
+                          onChange={() => sortChange(option)}
                         />
                         {option.label}
                       </label>

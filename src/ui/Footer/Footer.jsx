@@ -1,4 +1,4 @@
-import style from "./footer.module.css";
+import style from "./footer.module.scss";
 import { Logo } from "../Logo/Logo";
 import { NavBar } from "../NavBar/NavBar";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
@@ -10,23 +10,23 @@ export const Footer = () => {
   return (
     <footer className={style.footer}>
       <Container>
-        <div className={style.footerContainer}>
-          <div className={style.topFooterContainer}>
-            <div className={style.logoContainer}>
+        <div className={style.footer_footerContainer}>
+          <div className={style.footer__footerContainer__topFooterContainer}>
+            <div className={style.footer__footerContainer__topFooterContainer__logoContainer}>
               <Logo />
             </div>
-            <div className={style.socialContainer}>
-              <Facebook className={style.socialIcon} />{" "}
-              <Instagram className={style.socialIcon} />{" "}
-              <Twitter className={style.socialIcon} />{" "}
-              <Youtube className={style.socialIcon} />
+            <div className={style.footer__footerContainer__topFooterContainer__socialContainer}>
+              <Facebook className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
+              <Instagram className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
+              <Twitter className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
+              <Youtube className={style.footer__footerContainer__topFooterContainer__socialContainer__socialIcon} />
             </div>
             <div className={style.footerNavBar}>
-              <NavBar footer={false} />
+              <NavBar isFooter />
             </div>
           </div>
-          <div className={style.bottomFooterContainer}>
-            <p className={style.FooterCopyright}>
+          <div className={style.footer__footerContainer__bottomFooterContainer}>
+            <p className={style.footer__footerContainer__bottomFooterContainer__footerCopyright}>
               © 2025 Природні Мандри. Усі права захищені.
             </p>
           </div>

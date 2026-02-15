@@ -1,23 +1,25 @@
-
 .signUpBtn{
+    background: #CC6534;
+    color: #fff;
     width: 114px;
     height: 32px;
-    border: 1px solid #00000015;
     text-align: center;
     border-radius: 6px;
 
     transition-duration: 0.6s;
 }
 .signUpBtn:hover{
-    background: #CC6534;
-    color: #fff;
+    background: #0000000D;
+    border: 1px solid #00000026;
+    color: #000000;
     transition-duration: 0.3s;   
 }
 .signInBtn{
+    background: #0000000D;
     width: 65px;
     height: 32px;
     text-align: center;
-    border: 1px solid #00000015;
+    border: 1px solid #00000026;
     border-radius: 6px;
     transition-duration: 0.6s;
 }

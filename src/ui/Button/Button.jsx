@@ -1,4 +1,4 @@
-import style from './button.module.css'
+import style from './button.module.scss'
 import { useNavigate } from 'react-router-dom'
 export const Button = () => {
     const navigateToLogin = useNavigate()
@@ -7,7 +7,6 @@ export const Button = () => {
         <>
             <button className={style.signInBtn} onClick={()=> navigateToLogin("/auth/login")}>Вхід</button>
             <button className={style.signUpBtn} onClick={()=> navigateToRegistration("/auth/register")}>Реєстрація</button>
-            
         </>
         
     )
