@@ -11,6 +11,8 @@ export const LocationGallery = ({ gallery, poster }) => {
     ? gallery[0]
     : poster;
 
+  if (!publicId) return null;
+
   const img = cld
     .image(publicId)
     .format('auto')
@@ -19,3 +21,4 @@ export const LocationGallery = ({ gallery, poster }) => {
 
   return <AdvancedImage cldImg={img} className={style.image} />;
 };
+
